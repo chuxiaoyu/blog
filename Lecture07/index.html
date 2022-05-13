@@ -1,0 +1,1168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../image/logo.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+    
+    
+      
+        <title>Lecture07 机器翻译、seq2seq模型、注意力机制 - Xiaoyu's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7951f6f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#000000">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lecture07-seq2seq" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Xiaoyu&#39;s Blog" class="md-header__button md-logo" aria-label="Xiaoyu's Blog" data-md-component="logo">
+      
+  <img src="../image/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xiaoyu's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lecture07 机器翻译、seq2seq模型、注意力机制
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/chuxiaoyu/blog/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../dw-index/" class="md-tabs__link md-tabs__link--active">
+        Datawhale组队学习
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://chuxiaoyu.cn/" class="md-tabs__link">
+      About
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Xiaoyu&#39;s Blog" class="md-nav__button md-logo" aria-label="Xiaoyu's Blog" data-md-component="logo">
+      
+  <img src="../image/logo.png" alt="logo">
+
+    </a>
+    Xiaoyu's Blog
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/chuxiaoyu/blog/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Datawhale组队学习
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Datawhale组队学习" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Datawhale组队学习
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dw-index/" class="md-nav__link">
+        简介
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          CS224n自然语言处理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CS224n自然语言处理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          CS224n自然语言处理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lecture07 机器翻译、seq2seq模型、注意力机制
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Lecture07 机器翻译、seq2seq模型、注意力机制
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    本节主要内容
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 深度学习之前的机器翻译
+  </a>
+  
+    <nav class="md-nav" aria-label="1 深度学习之前的机器翻译">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 机器翻译任务定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 机器翻译的发展阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 基于统计的机器翻译
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 基于神经网络的机器翻译
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 注意力机制
+  </a>
+  
+    <nav class="md-nav" aria-label="3 注意力机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-seq2seq" class="md-nav__link">
+    3.1 seq2seq架构存在的问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-seq2seq" class="md-nav__link">
+    3.2 有注意力机制的seq2seq模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 注意力机制的公式表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33_1" class="md-nav__link">
+    3.3 注意力机制的优点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 注意力机制是一种广泛性的深度学习技巧
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    3.5 注意力分数的计算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture09/" class="md-nav__link">
+        Lecture09 自注意力模型、Transformers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture10/" class="md-nav__link">
+        Lecture10 预训练
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture11/" class="md-nav__link">
+        Lecture11 问答系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" data-md-state="indeterminate" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          基于transformers的NLP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基于transformers的NLP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          基于transformers的NLP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task01/" class="md-nav__link">
+        Task01 NLP学习概览
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task02/" class="md-nav__link">
+        Task02 学习Attentioin和Transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task03/" class="md-nav__link">
+        Task03 学习BERT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task04/" class="md-nav__link">
+        Task04 学习GPT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task05/" class="md-nav__link">
+        Task05 编写BERT模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task06/" class="md-nav__link">
+        Task06 BERT应用、训练和优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task07/" class="md-nav__link">
+        Task07 使用Transformers解决文本分类任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" data-md-state="indeterminate" type="checkbox" id="__nav_2_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          深入浅出PyTorch
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="深入浅出PyTorch" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          深入浅出PyTorch
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap01-02/" class="md-nav__link">
+        Chapter01-02 PyTorch的简介和安装、PyTorch基础知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap03/" class="md-nav__link">
+        Chapter03 PyTorch的主要组成模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap04/" class="md-nav__link">
+        Chapter04 PyTorch基础实战——FashionMNIST图像分类
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://chuxiaoyu.cn/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    本节主要内容
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 深度学习之前的机器翻译
+  </a>
+  
+    <nav class="md-nav" aria-label="1 深度学习之前的机器翻译">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    1.1 机器翻译任务定义
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    1.2 机器翻译的发展阶段
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    1.3 基于统计的机器翻译
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 基于神经网络的机器翻译
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 注意力机制
+  </a>
+  
+    <nav class="md-nav" aria-label="3 注意力机制">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-seq2seq" class="md-nav__link">
+    3.1 seq2seq架构存在的问题
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-seq2seq" class="md-nav__link">
+    3.2 有注意力机制的seq2seq模型
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 注意力机制的公式表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33_1" class="md-nav__link">
+    3.3 注意力机制的优点
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 注意力机制是一种广泛性的深度学习技巧
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    3.5 注意力分数的计算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+<a href="https://github.com/chuxiaoyu/blog/edit/master/docs/Lecture07.md" title="Edit this page" class="md-content__button md-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+</a>
+
+
+<h1 id="lecture07-seq2seq">Lecture07: 机器翻译、seq2seq模型、注意力机制<a class="headerlink" href="#lecture07-seq2seq" title="Permanent link">&para;</a></h1>
+<h2 id="_1">本节主要内容<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>机器翻译任务</li>
+<li>seq2seq模型架构</li>
+<li>注意力机制</li>
+</ul>
+<h2 id="1">1 深度学习之前的机器翻译<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h3 id="11">1.1 机器翻译任务定义<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
+<p>机器翻译（Machine Translation, MT）任务：将句子<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>从一种语言（Source Language）翻译成另一种语言（Target Language）的句子<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>。</p>
+<h3 id="12">1.2 机器翻译的发展阶段<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
+<ul>
+<li>1950s: 早期机器翻译</li>
+<li>1990s-2010s: 基于统计的机器翻译（Statistics Machine Translation, SMT）</li>
+<li>2014-: 基于神经网络的机器翻译（Neural Machine Translation, NMT）</li>
+<li>2017-: 以Transformer为代表的预训练模型时代</li>
+</ul>
+<h3 id="13">1.3 基于统计的机器翻译<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
+<p>基于统计的机器翻译（Statistics Machine Translation, SMT）的核心思想是从数据中学习一个概率模型。</p>
+<p>例如，给定一个法语语句<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，找出对应的最合适的英文翻译语句<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>，公式如下：
+$$
+argmax_yP(y|x)
+$$
+利用贝叶斯公式，可以将上述概率转化为两部分，分别进行学习：
+$$
+argmax_yP(x|y)P(y)
+$$
+上式中，<span class="arithmatex"><span class="MathJax_Preview">P(x|y)</span><script type="math/tex">P(x|y)</script></span>代表翻译模型（Translation Model），负责学习如何准确翻译单词、短语（fidelity，保真性）；<span class="arithmatex"><span class="MathJax_Preview">P(y)</span><script type="math/tex">P(y)</script></span>代表语言模型（Language Model），是对语言的流畅性（fluency）进行学习。<em>（注：对应翻译的两个标准：忠实、通顺）</em></p>
+<p>那么，如何学习翻译模型<span class="arithmatex"><span class="MathJax_Preview">P(x|y)</span><script type="math/tex">P(x|y)</script></span>？</p>
+<p>首先，需要大量的平行数据（Parallel Data），如大量人工翻译的法语/英语语句对。</p>
+<p>然后，引入隐变量<span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>：<span class="arithmatex"><span class="MathJax_Preview">P(x, a|y)</span><script type="math/tex">P(x, a|y)</script></span>，<span class="arithmatex"><span class="MathJax_Preview">a</span><script type="math/tex">a</script></span>是<span class="arithmatex"><span class="MathJax_Preview">alignment</span><script type="math/tex">alignment</script></span>，即语句<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>和语句<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>之间的单词级别的对应关系。这种对应非常负责，考虑以下情形：</p>
+<ul>
+<li>有些单词没有或不需要对应的翻译词（no counterpart）</li>
+<li>多个单词对应一个翻译词（many-to-one）</li>
+<li>一个单词对应多个翻译词（one-to-many）</li>
+<li>多个单词对应多个翻译词（many-to-many）</li>
+</ul>
+<p>对应关系<span class="arithmatex"><span class="MathJax_Preview">alignment</span><script type="math/tex">alignment</script></span>没有显性地存在于数据中，因此需要特殊的学习算法（如EM算法）。</p>
+<p>基于统计的机器翻译缺点如下：</p>
+<ul>
+<li>整个翻译系统及其复杂，包含大量未提及的细节和单独设计的子模块</li>
+<li>需要大量的特征工程（需要针对不同的特殊用法设计各种特征）</li>
+<li>需要大量的人力和成本来维护语料资源</li>
+</ul>
+<h2 id="2">2 基于神经网络的机器翻译<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>基于神经网络的机器翻译（Neural Machine Translation, NMT）是一种用端对端神经网络进行机器翻译的方式。这种神经网络架构称为sequence-to-sequence（seq2seq）模型，包含两个循环神经网络（RNNs）。</p>
+<p>seq2seq不只在机器翻译中使用，还被广泛应用于以下任务：</p>
+<ul>
+<li>文本摘要</li>
+<li>对话系统</li>
+<li>句法解析</li>
+<li>代码生成</li>
+</ul>
+<p>seq2seq可以视为条件语言模型（Conditional Language Model）的一种：</p>
+<ul>
+<li>语言模型是因为它的解码器用于预测目标语句<span class="arithmatex"><span class="MathJax_Preview">y</span><script type="math/tex">y</script></span>的下一个单词</li>
+<li>条件是因为它的预测是基于源语句<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>的（条件概率）</li>
+</ul>
+<p>NMT直接计算<span class="arithmatex"><span class="MathJax_Preview">P(y|x)</span><script type="math/tex">P(y|x)</script></span>：
+$$
+P(y|x) = P(y_1|x)P(y_2|y_1,x)P(y_3|y_1,y_2,x)...P(y_T|y_1,...,y_{T-1}, x)
+$$
+其中，<span class="arithmatex"><span class="MathJax_Preview">P(y_T|y_1,...,y_{T-1}, x)</span><script type="math/tex">P(y_T|y_1,...,y_{T-1}, x)</script></span>表示给定已有的目标单词和源语句<span class="arithmatex"><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span>，下一个目标单词的概率。</p>
+<p>训练NMT需要大量平行语料，并且可以使用多层RNN。</p>
+<p>RNN有两种解码方式：</p>
+<ul>
+<li>Greedy decoding</li>
+<li>Beam search decoding</li>
+</ul>
+<p>相较于SMT，NMT有如下优点：</p>
+<ul>
+<li>性能更好</li>
+<li>没有子模块</li>
+<li>降低了人力需求（不需要特征工程和考虑特例）</li>
+</ul>
+<p>同时也有如下缺点：</p>
+<ul>
+<li>不可解释性</li>
+<li>很难受控制</li>
+</ul>
+<p>从BLEU（Bilingual Evaluation Understudy）评测结果可以看出，NMT的性能已经远远超过SMT。</p>
+<p>NMT可能是深度学习在NLP中最成功的应用：</p>
+<ul>
+<li>
+<p>2014年，seq2seq论文发表；</p>
+</li>
+<li>
+<p>2016年，NMT成为机器翻译的标准方法，谷歌翻译从SMT转为NMT；</p>
+</li>
+<li>
+<p>2018年，所有公司的翻译工具均应用了NMT。</p>
+</li>
+</ul>
+<p>然而，机器学习任务并未被彻底终结，许多困难仍然存在，如常识信息未得到应用、背景信息在长文本中难以维护以及模型偏见等。</p>
+<h2 id="3">3 注意力机制<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31-seq2seq">3.1 seq2seq架构存在的问题<a class="headerlink" href="#31-seq2seq" title="Permanent link">&para;</a></h3>
+<ol>
+<li>语义向量可能无法完全捕捉到整个输入序列的信息；</li>
+<li>先输入到网络的内容携带的信息会被后输入的信息覆盖掉。输入序列越长，这个现象就越严重。</li>
+</ol>
+<p>因此，Attention（注意力机制）提供了一种解决方法。</p>
+<h3 id="32-seq2seq">3.2 有注意力机制的seq2seq模型<a class="headerlink" href="#32-seq2seq" title="Permanent link">&para;</a></h3>
+<p>注意力机制的核心思路是：在解码器进行解码的每一步，直接连接到编码器来关注输入序列中的特定部分。</p>
+<p><img alt="image-20220111171442329" src="image/image-20220111171442329.jpg" /></p>
+<h3 id="33">3.3 注意力机制的公式表示<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>假设编码器隐藏状态为<span class="arithmatex"><span class="MathJax_Preview">h_1,...,h_N∈R^h</span><script type="math/tex">h_1,...,h_N∈R^h</script></span>，在时间步<span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>时解码器的隐藏状态为<span class="arithmatex"><span class="MathJax_Preview">s_t∈R^h</span><script type="math/tex">s_t∈R^h</script></span>，则该时间步的注意力分数<span class="arithmatex"><span class="MathJax_Preview">e_t</span><script type="math/tex">e_t</script></span>可以表示为：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+e_t = [s^T_th_1,...,s^T_th_N]∈R^N
+</div>
+<script type="math/tex; mode=display">
+e_t = [s^T_th_1,...,s^T_th_N]∈R^N
+</script>
+</div>
+<p>然后使用softmax得到注意力概率分布<span class="arithmatex"><span class="MathJax_Preview">α^t</span><script type="math/tex">α^t</script></span>：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+α^t = softmax(e^t)∈R^N
+</div>
+<script type="math/tex; mode=display">
+α^t = softmax(e^t)∈R^N
+</script>
+</div>
+<p>利用<span class="arithmatex"><span class="MathJax_Preview">α^t</span><script type="math/tex">α^t</script></span>计算编码器隐藏状态的权重和，得到注意力输出<span class="arithmatex"><span class="MathJax_Preview">a_t</span><script type="math/tex">a_t</script></span>：</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+a_t = \sum_{i=1}^n{α^t_ih_i}∈R^h
+</div>
+<script type="math/tex; mode=display">
+a_t = \sum_{i=1}^n{α^t_ih_i}∈R^h
+</script>
+</div>
+<p>最后，将注意力输出<span class="arithmatex"><span class="MathJax_Preview">a_t</span><script type="math/tex">a_t</script></span>与解码器隐藏状态<span class="arithmatex"><span class="MathJax_Preview">s_t</span><script type="math/tex">s_t</script></span>拼接，后续的处理与没有注意力的seq2seq模型一样。</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+[a_t; s_t]∈R^h
+</div>
+<script type="math/tex; mode=display">
+[a_t; s_t]∈R^h
+</script>
+</div>
+<h3 id="33_1">3.3 注意力机制的优点<a class="headerlink" href="#33_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>显著提升了NMT性能</li>
+<li>解决了3.1中提到的seq2seq架构中的问题</li>
+<li>对解决梯度消失问题有一定帮助[?]</li>
+<li>提供了一定的可解释性</li>
+</ul>
+<h3 id="34">3.4 注意力机制是一种广泛性的深度学习技巧<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>注意力可以用于多种架构（不限于seq2seq）和多种任务（不限于机器翻译）中。</p>
+<p><strong>因此，一种更广义的注意力定义是：给定一组向量<span class="arithmatex"><span class="MathJax_Preview">values</span><script type="math/tex">values</script></span>（值），和一个向量<span class="arithmatex"><span class="MathJax_Preview">query</span><script type="math/tex">query</script></span>（查询），注意力是一种基于<span class="arithmatex"><span class="MathJax_Preview">query</span><script type="math/tex">query</script></span>计算<span class="arithmatex"><span class="MathJax_Preview">values</span><script type="math/tex">values</script></span>的带权重的和的技巧。</strong></p>
+<h3 id="35">3.5 注意力分数的计算<a class="headerlink" href="#35" title="Permanent link">&para;</a></h3>
+<p>假设<span class="arithmatex"><span class="MathJax_Preview">h_1,...,h_N∈R^{d1}</span><script type="math/tex">h_1,...,h_N∈R^{d1}</script></span>，<span class="arithmatex"><span class="MathJax_Preview">s∈R^{d2}</span><script type="math/tex">s∈R^{d2}</script></span>，那么注意力分数<span class="arithmatex"><span class="MathJax_Preview">e_t∈R^N</span><script type="math/tex">e_t∈R^N</script></span>有多种计算方式：</p>
+<ol>
+<li>
+<p>点积注意力（Basic dot-product attention）
+   $$
+   e_i = s^Th_i∈R
+   $$</p>
+</li>
+<li>
+<p>乘法注意力（Multiplicative attention）
+   $$
+   e_i = s^TWh_i∈R
+   $$
+   其中，<span class="arithmatex"><span class="MathJax_Preview">W</span><script type="math/tex">W</script></span>是权重矩阵。</p>
+</li>
+<li>
+<p>加性注意力（Additive attention）
+   $$
+   e_i = v^Ttanh(W_1h_i + W_2s)∈R
+   $$
+   其中，<span class="arithmatex"><span class="MathJax_Preview">W_1, W_2</span><script type="math/tex">W_1, W_2</script></span>是权重矩阵，<span class="arithmatex"><span class="MathJax_Preview">v</span><script type="math/tex">v</script></span>是权重向量。</p>
+</li>
+</ol>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../dw-index/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 简介" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              简介
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../Lecture09/" class="md-footer__link md-footer__link--next" aria-label="Next: Lecture09 自注意力模型、Transformers" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Lecture09 自注意力模型、Transformers
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2020 - 2022 by Xiaoyu Chu
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.649a939e.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
