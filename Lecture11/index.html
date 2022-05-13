@@ -8,7 +8,7 @@
       
       
       
-      <link rel="icon" href="../image/logo.png">
+      <link rel="icon" href="/image/logo.png">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
     
     
@@ -80,7 +80,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Xiaoyu&#39;s Blog" class="md-header__button md-logo" aria-label="Xiaoyu's Blog" data-md-component="logo">
       
-  <img src="../image/logo.png" alt="logo">
+  <img src="/image/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -230,7 +230,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Xiaoyu&#39;s Blog" class="md-nav__button md-logo" aria-label="Xiaoyu's Blog" data-md-component="logo">
       
-  <img src="../image/logo.png" alt="logo">
+  <img src="/image/logo.png" alt="logo">
 
     </a>
     Xiaoyu's Blog
@@ -1056,7 +1056,7 @@
 <p>教授：<a href="https://scholar.google.com/citations?user=sVR8ktkAAAAJ&amp;hl=zh-CN">Danqi Chen</a></p>
 <h2 id="1">1 问答简介<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h3 id="11">1.1 问答的定义<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220130005255261" src="image/image-20220130005255261.png" /></p>
+<p><img alt="image-20220130005255261" src="../image/image-20220130005255261.png" /></p>
 <h3 id="12">1.2 问答的分类<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <p>按问答系统使用的信息来源来看，有文章文本、网页文本、知识库、表格、图像等；</p>
 <p>按问题类型来看，有事实性或非事实性问题、开放域或封闭域问题、单一问题或组合问题；</p>
@@ -1066,18 +1066,18 @@
 <li>搜索引擎</li>
 <li>语音助手</li>
 </ul>
-<p><img alt="image-20220130010514122" src="image/image-20220130010514122.png" /></p>
+<p><img alt="image-20220130010514122" src="../image/image-20220130010514122.png" /></p>
 <p>进入深度学习时代后，几乎所有最先进的问答系统都建立在端到端训练和预训练的语言模型之上（例如，BERT）。</p>
 <h3 id="14">1.4 文本问答之外<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
 <p>本节重点是基于非结构化文本的问答系统。</p>
 <p>非结构化文本之外，还有基于数据库/知识库的问答、视觉问答等领域。</p>
 <h2 id="2">2 阅读理解任务<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="21">2.1 阅读理解定义<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220130012447184" src="image/image-20220130012447184.png" /></p>
+<p><img alt="image-20220130012447184" src="../image/image-20220130012447184.png" /></p>
 <p>阅读理解任务是自然语言理解的重要应用，很多NLP任务可以转化为阅读理解，例如信息抽取、语义标注等。</p>
 <h3 id="22-qasquad">2.2 斯坦福QA数据集（SQuAD）<a class="headerlink" href="#22-qasquad" title="Permanent link">&para;</a></h3>
 <p>SQuAD是2016年由斯坦福大学的研究者建立的问答数据集。</p>
-<p><img alt="image-20220130013746834" src="image/image-20220130013746834.png" /></p>
+<p><img alt="image-20220130013746834" src="../image/image-20220130013746834.png" /></p>
 <p><em>（所以只用了那些能用原文回答的问题）</em></p>
 <p>SQuAD有两个评估指标：</p>
 <ul>
@@ -1085,10 +1085,10 @@
 <li>F1（具体计算方式参考原论文）</li>
 </ul>
 <h3 id="23">2.3 阅读理解建模<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220130020940889" src="image/image-20220130020940889.png" /></p>
+<p><img alt="image-20220130020940889" src="../image/image-20220130020940889.png" /></p>
 <p>解决该任务主要有两类模型：</p>
-<p><img alt="image-20220130021131847" src="image/image-20220130021131847.png" /></p>
-<p><img alt="image-20220130021326124" src="image/image-20220130021326124.png" /></p>
+<p><img alt="image-20220130021131847" src="../image/image-20220130021131847.png" /></p>
+<p><img alt="image-20220130021326124" src="../image/image-20220130021326124.png" /></p>
 <h3 id="24-seq2seq">2.4 seq2seq回顾：机器翻译与阅读理解的异同<a class="headerlink" href="#24-seq2seq" title="Permanent link">&para;</a></h3>
 <ul>
 <li>
@@ -1102,35 +1102,35 @@
 <h3 id="25-bidaf">2.5 BiDAF模型<a class="headerlink" href="#25-bidaf" title="Permanent link">&para;</a></h3>
 <p>BiDAF: the Bidirectional Attention Flow model</p>
 <p>整体架构如下：</p>
-<p><img alt="image-20220130023101324" src="image/image-20220130023101324.png" /></p>
+<p><img alt="image-20220130023101324" src="../image/image-20220130023101324.png" /></p>
 <h4 id="251-encoding">2.5.1 编码层：Encoding<a class="headerlink" href="#251-encoding" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20220130024336553" src="image/image-20220130024336553.png" /></p>
+<p><img alt="image-20220130024336553" src="../image/image-20220130024336553.png" /></p>
 <h4 id="252-attention">2.5.2 注意力层：Attention<a class="headerlink" href="#252-attention" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20220130024601654" src="image/image-20220130024601654.png" /></p>
+<p><img alt="image-20220130024601654" src="../image/image-20220130024601654.png" /></p>
 <p>两种注意力：</p>
 <ul>
 <li>Context-to-query attention: 对于每个context word，从query words中选择最相关的词。</li>
 </ul>
-<p><img alt="image-20220130191718778" src="image/image-20220130191718778.png" /></p>
+<p><img alt="image-20220130191718778" src="../image/image-20220130191718778.png" /></p>
 <ul>
 <li>Query-to-context attention: 选择与 query words最相关的context words。</li>
 </ul>
-<p><img alt="image-20220130191730826" src="image/image-20220130191730826.png" /></p>
+<p><img alt="image-20220130191730826" src="../image/image-20220130191730826.png" /></p>
 <p>注意力可视化：</p>
-<p><img alt="image-20220130203911339" src="image/image-20220130203911339.png" /></p>
+<p><img alt="image-20220130203911339" src="../image/image-20220130203911339.png" /></p>
 <h4 id="253-modeling-and-output-layers">2.5.3 输出层：Modeling and output layers<a class="headerlink" href="#253-modeling-and-output-layers" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20220130203303168" src="image/image-20220130203303168.png" /></p>
+<p><img alt="image-20220130203303168" src="../image/image-20220130203303168.png" /></p>
 <ul>
 <li>Modeling layer: 两层双向LSTM网络。</li>
 </ul>
-<p><img alt="image-20220130202749818" src="image/image-20220130202749818.png" /></p>
+<p><img alt="image-20220130202749818" src="../image/image-20220130202749818.png" /></p>
 <ul>
 <li>Output layer：两个分类器，分别预测起始位置和结束位置。</li>
 </ul>
-<p><img alt="image-20220130202801962" src="image/image-20220130202801962.png" /></p>
+<p><img alt="image-20220130202801962" src="../image/image-20220130202801962.png" /></p>
 <h3 id="26-bert">2.6 BERT模型<a class="headerlink" href="#26-bert" title="Permanent link">&para;</a></h3>
 <p>BERT做阅读理解任务，思路如下：</p>
-<p><img alt="image-20220130215258610" src="image/image-20220130215258610.png" /></p>
+<p><img alt="image-20220130215258610" src="../image/image-20220130215258610.png" /></p>
 <h3 id="27-bidafbert">2.7 BiDAF和BERT的异同<a class="headerlink" href="#27-bidafbert" title="Permanent link">&para;</a></h3>
 <p>不同点：</p>
 <ul>
@@ -1139,20 +1139,20 @@
 <li>BERT经过预训练，而BiDAF除了用GloVe进行编码外，其他参数都只是从该任务的监督数据集上学到的</li>
 </ul>
 <p>相同点：</p>
-<p><img alt="image-20220130225038687" src="image/image-20220130225038687.png" /></p>
+<p><img alt="image-20220130225038687" src="../image/image-20220130225038687.png" /></p>
 <p>（BERT叠加了更多的attention（自注意力），研究表明，向BiDAF增加自注意力层也能提升效果。）</p>
 <p>此外，SpanBERT（如下图）通过改变mask数据和训练任务也能提升效果：</p>
 <ul>
 <li>用连续mask取代随机mask</li>
 <li>用span的两个节点预测所有mask的单词。（相当于把span的信息压缩到两个节点中）</li>
 </ul>
-<p><img alt="image-20220130230022939" src="image/image-20220130230022939.png" /></p>
+<p><img alt="image-20220130230022939" src="../image/image-20220130230022939.png" /></p>
 <h2 id="3">3 开放领域的问答任务<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <h3 id="31">3.1 开放域问答的特点<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220130231057445" src="image/image-20220130231057445.png" /></p>
+<p><img alt="image-20220130231057445" src="../image/image-20220130231057445.png" /></p>
 <h3 id="32-retriever-reader">3.2 Retriever-reader架构<a class="headerlink" href="#32-retriever-reader" title="Permanent link">&para;</a></h3>
 <p>参考文献：Chen et al., 2017. Reading Wikipedia to Answer Open-domain Questions </p>
-<p><img alt="image-20220130232756421" src="image/image-20220130232756421.png" /></p>
+<p><img alt="image-20220130232756421" src="../image/image-20220130232756421.png" /></p>
 <h3 id="33">3.3 开放域问答最新进展<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>Recent work[1] shows that it is beneficial to generate answers instead of to extract answers. </p>
 <p>Large language models can do open-domain QA well without an explicit retriever stage[2].</p>
@@ -1167,7 +1167,7 @@
 <p>[4] Lee et al., 2020. Learning Dense Representations of Phrases at Scale </p>
 </blockquote>
 <p>深入了解的话见<a href="https://scholar.google.com/citations?user=sVR8ktkAAAAJ&amp;hl=zh-CN">Danqi Chen</a>的代表作。</p>
-<p><img alt="image-20220131005919576" src="image/image-20220131005919576.png" /></p>
+<p><img alt="image-20220131005919576" src="../image/image-20220131005919576.png" /></p>
 
               
             </article>
