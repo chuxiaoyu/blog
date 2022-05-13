@@ -1013,7 +1013,7 @@ $$
 <p>因此，Attention（注意力机制）提供了一种解决方法。</p>
 <h3 id="32-seq2seq">3.2 有注意力机制的seq2seq模型<a class="headerlink" href="#32-seq2seq" title="Permanent link">&para;</a></h3>
 <p>注意力机制的核心思路是：在解码器进行解码的每一步，直接连接到编码器来关注输入序列中的特定部分。</p>
-<p><img alt="image-20220111171442329" src="image/image-20220111171442329.jpg" /></p>
+<p><img alt="image-20220111171442329" src="../image/image-20220111171442329.jpg" /></p>
 <h3 id="33">3.3 注意力机制的公式表示<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
 <p>假设编码器隐藏状态为<span class="arithmatex"><span class="MathJax_Preview">h_1,...,h_N∈R^h</span><script type="math/tex">h_1,...,h_N∈R^h</script></span>，在时间步<span class="arithmatex"><span class="MathJax_Preview">t</span><script type="math/tex">t</script></span>时解码器的隐藏状态为<span class="arithmatex"><span class="MathJax_Preview">s_t∈R^h</span><script type="math/tex">s_t∈R^h</script></span>，则该时间步的注意力分数<span class="arithmatex"><span class="MathJax_Preview">e_t</span><script type="math/tex">e_t</script></span>可以表示为：</p>
 <div class="arithmatex">

@@ -1072,7 +1072,7 @@ q^T_ik_j, j<i\\
 </div>
 <h2 id="2-transformer">2 Transformer模型介绍<a class="headerlink" href="#2-transformer" title="Permanent link">&para;</a></h2>
 <h3 id="21-transformer">2.1 Transformer概览<a class="headerlink" href="#21-transformer" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220113163942108" src="image/image-20220113163942108.png" /></p>
+<p><img alt="image-20220113163942108" src="../image/image-20220113163942108.png" /></p>
 <h3 id="22-transformer">2.2 Transformer编码器<a class="headerlink" href="#22-transformer" title="Permanent link">&para;</a></h3>
 <p>编码器（Encoder）包含以下模块：</p>
 <ul>
@@ -1102,7 +1102,7 @@ q^T_ik_j, j<i\\
 $$
 output = softmax(XQ(XK)^T)×XV
 $$
-<img alt="image-20220113180152211" src="image/image-20220113180152211.png" /></p>
+<img alt="image-20220113180152211" src="../image/image-20220113180152211.png" /></p>
 <h4 id="222">2.2.2 多头注意力机制<a class="headerlink" href="#222" title="Permanent link">&para;</a></h4>
 <p>对于单词<span class="arithmatex"><span class="MathJax_Preview">i</span><script type="math/tex">i</script></span>，自注意力只注意到<span class="arithmatex"><span class="MathJax_Preview">x^T_iQ^TKx_j</span><script type="math/tex">x^T_iQ^TKx_j</script></span>高的地方，但是我们如何关注到不同的<span class="arithmatex"><span class="MathJax_Preview">j</span><script type="math/tex">j</script></span>呢？</p>
 <blockquote>
@@ -1122,14 +1122,14 @@ $$
 output = Y[output_1;...;output_h], Y∈R^{d×d}
 $$
 下图是单头注意力和多头注意力的简单示意图：</p>
-<p><img alt="image-20220114135758701" src="image/image-20220114135758701.png" /></p>
+<p><img alt="image-20220114135758701" src="../image/image-20220114135758701.png" /></p>
 <p>可以看出，多头注意力和单个注意力的计算量是一样的。<em>（都是把矩阵拼起来计算一次）</em></p>
 <h4 id="223">2.2.3 残差连接<a class="headerlink" href="#223" title="Permanent link">&para;</a></h4>
 <p>残差连接（Residual connections）是一种提升模型训练效果的技巧。</p>
 <p>正常情况：<span class="arithmatex"><span class="MathJax_Preview">X^{(i)} = Layer(X^{(i-1)})</span><script type="math/tex">X^{(i)} = Layer(X^{(i-1)})</script></span></p>
-<p><img alt="image-20220114140717577" src="image/image-20220114140717577.png" /></p>
+<p><img alt="image-20220114140717577" src="../image/image-20220114140717577.png" /></p>
 <p>残差连接：<span class="arithmatex"><span class="MathJax_Preview">X^{(i)} = X^{(i-1)}+Layer(X^{(i-1)})</span><script type="math/tex">X^{(i)} = X^{(i-1)}+Layer(X^{(i-1)})</script></span></p>
-<p><img alt="image-20220114140832475" src="image/image-20220114140832475.png" /></p>
+<p><img alt="image-20220114140832475" src="../image/image-20220114140832475.png" /></p>
 <h4 id="224">2.2.4 归一化<a class="headerlink" href="#224" title="Permanent link">&para;</a></h4>
 <p>归一化（Layer normalization）是一种提升模型训练速度的技巧。
 $$
@@ -1159,10 +1159,10 @@ output_ℓ = softmax(\frac{XQ_ℓK_ℓ^TX^T}{\sqrt{d/h}})*XV_ℓ
 <p>可以看出，就是将注意力分数除以维数<span class="arithmatex"><span class="MathJax_Preview">d</span><script type="math/tex">d</script></span>除以注意力头的数量<span class="arithmatex"><span class="MathJax_Preview">h</span><script type="math/tex">h</script></span>的根。</p>
 <h4 id="226">2.2.6 小结<a class="headerlink" href="#226" title="Permanent link">&para;</a></h4>
 <p>2.1中给出了Tranformer编码器的整体概览，经过对模块组成的分解，编码器更具体的结构如下图所示：</p>
-<p><img alt="image-20220114143617158" src="image/image-20220114143617158.png" /></p>
+<p><img alt="image-20220114143617158" src="../image/image-20220114143617158.png" /></p>
 <h3 id="23-transformer">2.3 Transformer解码器<a class="headerlink" href="#23-transformer" title="Permanent link">&para;</a></h3>
 <p>解码器的结构与编码器类似，如图：</p>
-<p><img alt="image-20220114144135116" src="image/image-20220114144135116.png" /></p>
+<p><img alt="image-20220114144135116" src="../image/image-20220114144135116.png" /></p>
 <p>可以看出，稍微不一样的地方在于交叉注意力（Cross attention）。</p>
 <p><strong>交叉注意力机制</strong></p>
 <p>假设<span class="arithmatex"><span class="MathJax_Preview">h_1,...,h_T</span><script type="math/tex">h_1,...,h_T</script></span>是Transformer编码器的输出向量，<span class="arithmatex"><span class="MathJax_Preview">z_1,...,z_T</span><script type="math/tex">z_1,...,z_T</script></span>是Transformer解码器的输入向量，那么，</p>
@@ -1174,7 +1174,7 @@ output_ℓ = softmax(\frac{XQ_ℓK_ℓ^TX^T}{\sqrt{d/h}})*XV_ℓ
 $$
 output = softmax(ZQ(HK)^T)×HV
 $$
-<img alt="image-20220114145530907" src="image/image-20220114145530907.png" /></p>
+<img alt="image-20220114145530907" src="../image/image-20220114145530907.png" /></p>
 
               
             </article>

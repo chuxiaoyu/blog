@@ -931,36 +931,36 @@
 <h2 id="1">1 子词模型回顾<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <h3 id="11">1.1 独热编码<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
 <p>假设我们有一个固定的词表，那么：</p>
-<p><img alt="image-20220118140241676" src="image/image-20220118140241676.png" /></p>
+<p><img alt="image-20220118140241676" src="../image/image-20220118140241676.png" /></p>
 <p>这种词表示方法的效果不是很好，因为单词有非常多的形态。</p>
 <h3 id="12">1.2 字节对编码算法<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
 <p>一种解决思路是字节对编码（byte-pair encoding algorithm），它把单词分解成一系列的子词（subwords）组成的序列，这样稀有词就可以被表示。</p>
-<p><img alt="image-20220118141749727" src="image/image-20220118141749727.png" /></p>
+<p><img alt="image-20220118141749727" src="../image/image-20220118141749727.png" /></p>
 <h2 id="2">2 从词向量中获得模型预训练的启发<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <h3 id="21">2.1 预训练词向量<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
 <p>大约2017开始，开始预训练词向量（没有背景信息）：</p>
-<p><img alt="image-20220118145335535" src="image/image-20220118145335535.png" /></p>
+<p><img alt="image-20220118145335535" src="../image/image-20220118145335535.png" /></p>
 <h3 id="22">2.2 预训练模型整体<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
 <p>在现在的NLP中，所有参数都通过预训练进行初始化。</p>
-<p><img alt="image-20220118145534423" src="image/image-20220118145534423.png" /></p>
+<p><img alt="image-20220118145534423" src="../image/image-20220118145534423.png" /></p>
 <h3 id="23">2.3 预训练/微调范式<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
 <p>预训练通过模型初始化来提升NLP任务的应用效果。</p>
-<p><img alt="image-20220119150524579" src="image/image-20220119150524579.png" /></p>
+<p><img alt="image-20220119150524579" src="../image/image-20220119150524579.png" /></p>
 <h3 id="24">2.4 随机梯度下降和预训练/微调<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
 <p>从神经网络的训练角度看，为什么预训练/微调是有效的？</p>
 <p>假设参数<span class="arithmatex"><span class="MathJax_Preview">\hat{𝜃}</span><script type="math/tex">\hat{𝜃}</script></span>可以最小化预训练阶段的损失函数<span class="arithmatex"><span class="MathJax_Preview">min_𝜃ℒ_{pretrain}(𝜃)</span><script type="math/tex">min_𝜃ℒ_{pretrain}(𝜃)</script></span>，那么微调阶段的损失函数<span class="arithmatex"><span class="MathJax_Preview">min_𝜃ℒ_{fineturn}(𝜃)</span><script type="math/tex">min_𝜃ℒ_{fineturn}(𝜃)</script></span>从<span class="arithmatex"><span class="MathJax_Preview">\hat{𝜃}</span><script type="math/tex">\hat{𝜃}</script></span>开始进行初始化。</p>
-<p><img alt="image-20220119154506465" src="image/image-20220119154506465.png" /></p>
+<p><img alt="image-20220119154506465" src="../image/image-20220119154506465.png" /></p>
 <blockquote>
 <p><em>这两句话不是很理解</em>。</p>
 </blockquote>
 <h2 id="3">3 三种预训练方法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<p><img alt="image-20220119155115393" src="image/image-20220119155115393.png" /></p>
+<p><img alt="image-20220119155115393" src="../image/image-20220119155115393.png" /></p>
 <h3 id="31">3.1 解码器<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220119163446436" src="image/image-20220119163446436.png" /></p>
+<p><img alt="image-20220119163446436" src="../image/image-20220119163446436.png" /></p>
 <h3 id="32">3.2 编码器<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220119165427657" src="image/image-20220119165427657.png" /></p>
+<p><img alt="image-20220119165427657" src="../image/image-20220119165427657.png" /></p>
 <h3 id="33-">3.3 编码器-解码器<a class="headerlink" href="#33-" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220119171056241" src="image/image-20220119171056241.png" /></p>
+<p><img alt="image-20220119171056241" src="../image/image-20220119171056241.png" /></p>
 
               
             </article>
