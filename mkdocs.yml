@@ -1,0 +1,106 @@
+site_name: Xiaoyu's Blog
+repo_url: https://github.com/chuxiaoyu/blog
+copyright: '&copy; 2022 by Xiaoyu Chu'
+
+theme:
+  name: material
+  favicon: image/logo.png
+  logo: image/logo2.png
+  font:
+    text: Source Serif Pro
+
+  palette:
+    primary: black
+
+
+    # accent: black
+  # feature:
+  #   tabs: true
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    # - navigation.expand
+
+repo_name:
+  chuxiaoyu/blog
+
+
+nav:
+# - About: https://chuxiaoyu.cn/
+- Home: index.md
+- Machine Learning:
+  - 目录: ml-index.md
+  - CS224n自然语言处理:
+    - Lecture07 机器翻译、seq2seq模型、注意力机制: Lecture07.md
+    - Lecture09 自注意力模型、Transformers: Lecture09.md
+    - Lecture10 预训练: Lecture10.md
+    - Lecture11 问答系统: Lecture11.md
+  - 基于transformers的NLP:
+    - Task01 NLP学习概览: nlp-transformer-task01.md
+    - Task02 学习Attentioin和Transformer: nlp-transformer-task02.md
+    - Task03 学习BERT: nlp-transformer-task03.md
+    - Task04 学习GPT: nlp-transformer-task04.md
+    - Task05 编写BERT模型: nlp-transformer-task05.md
+    - Task06 BERT应用、训练和优化: nlp-transformer-task06.md
+    - Task07 使用Transformers解决文本分类任务: nlp-transformer-task07.md
+  - 深入浅出PyTorch:
+    - Chapter01-02 PyTorch的简介和安装、PyTorch基础知识: pytorch-chap01-02.md
+    - Chapter03 PyTorch的主要组成模块: pytorch-chap03.md
+    - Chapter04 PyTorch基础实战——FashionMNIST图像分类: pytorch-chap04.md
+- Computer Systems:
+  - 目录: sys-index.md
+  - Nand2Tetris 计算机系统要素:
+    - Nand2Tetris Part1 (Hardware): nand2tetris_part_1.md
+    - Nand2Tetris Part2 (Software): nand2tetris_part_2.md
+  - ML Compilation 机器学习编译:
+    - 01 机器学习编译概述: ml-compilation-01.md
+    - 02 张量程序抽象: ml-compilation-02.md
+- Posts:
+  - Open Source Projects: open-source-projects.md
+# - Photos:
+  # - Introduction: photo-index.md
+# - 随笔:
+  # - 科研学术类播客推荐: podcast.md
+- About: https://www.chuxiaoyu.cn/
+
+
+
+
+
+
+
+
+
+plugins:
+  - search
+  - git-revision-date-localized
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - footnotes
+  - meta
+  - def_list
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_png
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.tilde
+
+extra_javascript:
+    - 'js/extra.js'
+    - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
