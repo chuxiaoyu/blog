@@ -2,13 +2,9 @@
 
 ## 课程
 
-英文课程主页 https://mlc.ai/summer22/
+英文课程主页 https://mlc.ai/summer22/ 英文课程材料 https://mlc.ai/index.html
 
-英文课程材料 https://mlc.ai/index.html
-
-中文课程主页 https://mlc.ai/summer22-zh/
-
-中文课程材料 https://mlc.ai/zh/index.html
+中文课程主页 https://mlc.ai/summer22-zh/ 中文课程材料 https://mlc.ai/zh/index.html
 
 ## 机器学习编译及目标
 
@@ -34,6 +30,9 @@
 ## 关键元素：张量函数和抽象
 
 - 张量和张量函数
+
+![../_images/mlc-elem-transform.png](image/mlc-elem-transform.png)
+
 - 抽象和实现：更细化的抽象是更高级的抽象的实现
 
 大多数机器学习编译是在做张量函数之间的变换。
