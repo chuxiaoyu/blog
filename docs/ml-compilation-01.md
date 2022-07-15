@@ -1,6 +1,6 @@
 # 01 机器学习编译概述
 
-## 课程
+## 参考资料
 
 英文课程主页 https://mlc.ai/summer22/ 英文课程材料 https://mlc.ai/index.html
 
@@ -11,6 +11,8 @@
 机器学习部署问题：开发和部署之间的GAP（硬件、操作系统、容器、库等）
 
 机器学习编译：将模型开发形态转化为部署形态的过程
+
+![../_images/dev-deploy-form.png](image/dev-deploy-form.png)
 
 机器学习编译目标：
 
@@ -34,6 +36,8 @@
 ![../_images/mlc-elem-transform.png](image/mlc-elem-transform.png)
 
 - 抽象和实现：更细化的抽象是更高级的抽象的实现
+
+> 抽象和实现可能是所有计算机系统中最重要的关键字。抽象指定“做什么”，实现提供“如何”做。没有具体的界限。
 
 大多数机器学习编译是在做张量函数之间的变换。
 

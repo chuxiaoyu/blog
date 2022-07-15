@@ -27,8 +27,8 @@ repo_name:
 
 nav:
 # - About: https://chuxiaoyu.cn/
-- Home: index.md
-- Machine Learning:
+- 🏠 Home: index.md
+- 🤖 Machine Learning:
   - 目录: ml-index.md
   - CS224n自然语言处理:
     - Lecture07 机器翻译、seq2seq模型、注意力机制: Lecture07.md
@@ -47,7 +47,7 @@ nav:
     - Chapter01-02 PyTorch的简介和安装、PyTorch基础知识: pytorch-chap01-02.md
     - Chapter03 PyTorch的主要组成模块: pytorch-chap03.md
     - Chapter04 PyTorch基础实战——FashionMNIST图像分类: pytorch-chap04.md
-- Computer Systems:
+- 💾 Computer Systems:
   - 目录: sys-index.md
   - Nand2Tetris 计算机系统要素:
     - Nand2Tetris Part1 (Hardware): nand2tetris_part_1.md
@@ -55,13 +55,14 @@ nav:
   - ML Compilation 机器学习编译:
     - 01 机器学习编译概述: ml-compilation-01.md
     - 02 张量程序抽象: ml-compilation-02.md
-- Posts:
+    - 03 张量程序抽象案例研究：TensorIR: ml-compilation-03.md
+- 📝 Posts:
   - Open Source Projects: open-source-projects.md
 # - Photos:
   # - Introduction: photo-index.md
 # - 随笔:
   # - 科研学术类播客推荐: podcast.md
-- About: https://www.chuxiaoyu.cn/
+- 🧑‍🚀 About: https://www.chuxiaoyu.cn/
 
 
 
