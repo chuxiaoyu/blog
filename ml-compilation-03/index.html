@@ -13,7 +13,7 @@
     
     
       
-        <title>Lecture11 问答系统 - Xiaoyu's Blog</title>
+        <title>03 张量程序抽象案例研究：TensorIR - Xiaoyu's Blog</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lecture11" class="md-skip">
+        <a href="#03-tensorir" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lecture11 问答系统
+              03 张量程序抽象案例研究：TensorIR
             
           </span>
         </div>
@@ -174,15 +174,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../ml-index/" class="md-tabs__link md-tabs__link--active">
+      <a href="../ml-index/" class="md-tabs__link">
         🤖 Machine Learning
       </a>
     </li>
@@ -192,13 +190,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../sys-index/" class="md-tabs__link">
+      <a href="../sys-index/" class="md-tabs__link md-tabs__link--active">
         💾 Computer Systems
       </a>
     </li>
@@ -303,14 +303,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -345,14 +343,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
       
       
       
@@ -415,216 +411,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Lecture11 问答系统
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Lecture11/" class="md-nav__link">
         Lecture11 问答系统
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    本节主要内容
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1 问答简介
-  </a>
-  
-    <nav class="md-nav" aria-label="1 问答简介">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    1.1 问答的定义
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    1.2 问答的分类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
-    1.3 问答的应用
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14" class="md-nav__link">
-    1.4 文本问答之外
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2 阅读理解任务
-  </a>
-  
-    <nav class="md-nav" aria-label="2 阅读理解任务">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    2.1 阅读理解定义
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-qasquad" class="md-nav__link">
-    2.2 斯坦福QA数据集（SQuAD）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
-    2.3 阅读理解建模
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-seq2seq" class="md-nav__link">
-    2.4 seq2seq回顾：机器翻译与阅读理解的异同
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-bidaf" class="md-nav__link">
-    2.5 BiDAF模型
-  </a>
-  
-    <nav class="md-nav" aria-label="2.5 BiDAF模型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#251-encoding" class="md-nav__link">
-    2.5.1 编码层：Encoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#252-attention" class="md-nav__link">
-    2.5.2 注意力层：Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#253-modeling-and-output-layers" class="md-nav__link">
-    2.5.3 输出层：Modeling and output layers
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-bert" class="md-nav__link">
-    2.6 BERT模型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#27-bidafbert" class="md-nav__link">
-    2.7 BiDAF和BERT的异同
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3 开放领域的问答任务
-  </a>
-  
-    <nav class="md-nav" aria-label="3 开放领域的问答任务">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    3.1 开放域问答的特点
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-retriever-reader" class="md-nav__link">
-    3.2 Retriever-reader架构
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
-    3.3 开放域问答最新进展
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -855,12 +646,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       
       
@@ -956,12 +749,14 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       
       
@@ -1010,11 +805,114 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../ml-compilation-03/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          03 张量程序抽象案例研究：TensorIR
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         03 张量程序抽象案例研究：TensorIR
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#-tensorir" class="md-nav__link">
+    张量函数抽象 - TensorIR实例
+  </a>
+  
+    <nav class="md-nav" aria-label="张量函数抽象 - TensorIR实例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    NumPy表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numpymm_relu" class="md-nav__link">
+    NumPy实现mm_relu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorir-mm_relu" class="md-nav__link">
+    TensorIR 实现mm_relu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorirnumpy" class="md-nav__link">
+    TensorIR和NumPy代码对应⭐
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-axis" class="md-nav__link">
+    块和块轴（Block axis）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    函数属性和装饰器
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    小结
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    张量函数变换
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1123,44 +1021,58 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#-tensorir" class="md-nav__link">
+    张量函数抽象 - TensorIR实例
+  </a>
+  
+    <nav class="md-nav" aria-label="张量函数抽象 - TensorIR实例">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#numpy" class="md-nav__link">
+    NumPy表示
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#numpymm_relu" class="md-nav__link">
+    NumPy实现mm_relu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorir-mm_relu" class="md-nav__link">
+    TensorIR 实现mm_relu
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tensorirnumpy" class="md-nav__link">
+    TensorIR和NumPy代码对应⭐
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#block-axis" class="md-nav__link">
+    块和块轴（Block axis）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    本节主要内容
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    1 问答简介
-  </a>
-  
-    <nav class="md-nav" aria-label="1 问答简介">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#11" class="md-nav__link">
-    1.1 问答的定义
+    函数属性和装饰器
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#12" class="md-nav__link">
-    1.2 问答的分类
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#13" class="md-nav__link">
-    1.3 问答的应用
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#14" class="md-nav__link">
-    1.4 文本问答之外
+  <a href="#_2" class="md-nav__link">
+    小结
   </a>
   
 </li>
@@ -1171,125 +1083,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    2 阅读理解任务
+  <a href="#_3" class="md-nav__link">
+    张量函数变换
   </a>
-  
-    <nav class="md-nav" aria-label="2 阅读理解任务">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
-    2.1 阅读理解定义
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#22-qasquad" class="md-nav__link">
-    2.2 斯坦福QA数据集（SQuAD）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
-    2.3 阅读理解建模
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#24-seq2seq" class="md-nav__link">
-    2.4 seq2seq回顾：机器翻译与阅读理解的异同
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#25-bidaf" class="md-nav__link">
-    2.5 BiDAF模型
-  </a>
-  
-    <nav class="md-nav" aria-label="2.5 BiDAF模型">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#251-encoding" class="md-nav__link">
-    2.5.1 编码层：Encoding
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#252-attention" class="md-nav__link">
-    2.5.2 注意力层：Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#253-modeling-and-output-layers" class="md-nav__link">
-    2.5.3 输出层：Modeling and output layers
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26-bert" class="md-nav__link">
-    2.6 BERT模型
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#27-bidafbert" class="md-nav__link">
-    2.7 BiDAF和BERT的异同
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    3 开放领域的问答任务
-  </a>
-  
-    <nav class="md-nav" aria-label="3 开放领域的问答任务">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    3.1 开放域问答的特点
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#32-retriever-reader" class="md-nav__link">
-    3.2 Retriever-reader架构
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#33" class="md-nav__link">
-    3.3 开放域问答最新进展
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1305,140 +1101,114 @@
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/chuxiaoyu/blog/edit/master/docs/Lecture11.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/chuxiaoyu/blog/edit/master/docs/ml-compilation-03.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
-<h1 id="lecture11">Lecture11: 问答系统<a class="headerlink" href="#lecture11" title="Permanent link">&para;</a></h1>
-<h2 id="_1">本节主要内容<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>问答系统简介</li>
-<li>阅读理解任务</li>
-<li>开放领域的问答任务</li>
-</ul>
-<p>教授：<a href="https://scholar.google.com/citations?user=sVR8ktkAAAAJ&amp;hl=zh-CN">Danqi Chen</a></p>
-<h2 id="1">1 问答简介<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<h3 id="11">1.1 问答的定义<a class="headerlink" href="#11" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220130005255261" src="../image/image-20220130005255261.png" /></p>
-<h3 id="12">1.2 问答的分类<a class="headerlink" href="#12" title="Permanent link">&para;</a></h3>
-<p>按问答系统使用的信息来源来看，有文章文本、网页文本、知识库、表格、图像等；</p>
-<p>按问题类型来看，有事实性或非事实性问题、开放域或封闭域问题、单一问题或组合问题；</p>
-<p>从回答类型来看，有摘要、段落、列表、对错等。</p>
-<h3 id="13">1.3 问答的应用<a class="headerlink" href="#13" title="Permanent link">&para;</a></h3>
-<ul>
-<li>搜索引擎</li>
-<li>语音助手</li>
-</ul>
-<p><img alt="image-20220130010514122" src="../image/image-20220130010514122.png" /></p>
-<p>进入深度学习时代后，几乎所有最先进的问答系统都建立在端到端训练和预训练的语言模型之上（例如，BERT）。</p>
-<h3 id="14">1.4 文本问答之外<a class="headerlink" href="#14" title="Permanent link">&para;</a></h3>
-<p>本节重点是基于非结构化文本的问答系统。</p>
-<p>非结构化文本之外，还有基于数据库/知识库的问答、视觉问答等领域。</p>
-<h2 id="2">2 阅读理解任务<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<h3 id="21">2.1 阅读理解定义<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220130012447184" src="../image/image-20220130012447184.png" /></p>
-<p>阅读理解任务是自然语言理解的重要应用，很多NLP任务可以转化为阅读理解，例如信息抽取、语义标注等。</p>
-<h3 id="22-qasquad">2.2 斯坦福QA数据集（SQuAD）<a class="headerlink" href="#22-qasquad" title="Permanent link">&para;</a></h3>
-<p>SQuAD是2016年由斯坦福大学的研究者建立的问答数据集。</p>
-<p><img alt="image-20220130013746834" src="../image/image-20220130013746834.png" /></p>
-<p><em>（所以只用了那些能用原文回答的问题）</em></p>
-<p>SQuAD有两个评估指标：</p>
-<ul>
-<li>EM（精确匹配，Exact Match）（0 或 1）</li>
-<li>F1（具体计算方式参考原论文）</li>
-</ul>
-<h3 id="23">2.3 阅读理解建模<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220130020940889" src="../image/image-20220130020940889.png" /></p>
-<p>解决该任务主要有两类模型：</p>
-<p><img alt="image-20220130021131847" src="../image/image-20220130021131847.png" /></p>
-<p><img alt="image-20220130021326124" src="../image/image-20220130021326124.png" /></p>
-<h3 id="24-seq2seq">2.4 seq2seq回顾：机器翻译与阅读理解的异同<a class="headerlink" href="#24-seq2seq" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>机器翻译中，有source sentence和target sentence；阅读理解也有两段文本：passage和question（字数不均衡）。</p>
-</li>
-<li>
-<p>机器翻译中，需要找到与target word相关的source word；阅读理解中，需要找到与question最相关的passage中的单词。（都需要注意力机制来实现）</p>
-</li>
-<li>机器翻译需要解码器生成答案；但是阅读理解任务需要两个分类器预测答案的起始位置和结束位置。</li>
-</ul>
-<h3 id="25-bidaf">2.5 BiDAF模型<a class="headerlink" href="#25-bidaf" title="Permanent link">&para;</a></h3>
-<p>BiDAF: the Bidirectional Attention Flow model</p>
-<p>整体架构如下：</p>
-<p><img alt="image-20220130023101324" src="../image/image-20220130023101324.png" /></p>
-<h4 id="251-encoding">2.5.1 编码层：Encoding<a class="headerlink" href="#251-encoding" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20220130024336553" src="../image/image-20220130024336553.png" /></p>
-<h4 id="252-attention">2.5.2 注意力层：Attention<a class="headerlink" href="#252-attention" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20220130024601654" src="../image/image-20220130024601654.png" /></p>
-<p>两种注意力：</p>
-<ul>
-<li>Context-to-query attention: 对于每个context word，从query words中选择最相关的词。</li>
-</ul>
-<p><img alt="image-20220130191718778" src="../image/image-20220130191718778.png" /></p>
-<ul>
-<li>Query-to-context attention: 选择与 query words最相关的context words。</li>
-</ul>
-<p><img alt="image-20220130191730826" src="../image/image-20220130191730826.png" /></p>
-<p>注意力可视化：</p>
-<p><img alt="image-20220130203911339" src="../image/image-20220130203911339.png" /></p>
-<h4 id="253-modeling-and-output-layers">2.5.3 输出层：Modeling and output layers<a class="headerlink" href="#253-modeling-and-output-layers" title="Permanent link">&para;</a></h4>
-<p><img alt="image-20220130203303168" src="../image/image-20220130203303168.png" /></p>
-<ul>
-<li>Modeling layer: 两层双向LSTM网络。</li>
-</ul>
-<p><img alt="image-20220130202749818" src="../image/image-20220130202749818.png" /></p>
-<ul>
-<li>Output layer：两个分类器，分别预测起始位置和结束位置。</li>
-</ul>
-<p><img alt="image-20220130202801962" src="../image/image-20220130202801962.png" /></p>
-<h3 id="26-bert">2.6 BERT模型<a class="headerlink" href="#26-bert" title="Permanent link">&para;</a></h3>
-<p>BERT做阅读理解任务，思路如下：</p>
-<p><img alt="image-20220130215258610" src="../image/image-20220130215258610.png" /></p>
-<h3 id="27-bidafbert">2.7 BiDAF和BERT的异同<a class="headerlink" href="#27-bidafbert" title="Permanent link">&para;</a></h3>
-<p>不同点：</p>
-<ul>
-<li>BERT参数更多</li>
-<li>BiDAF基于BiLSTM，BERT基于Transformer</li>
-<li>BERT经过预训练，而BiDAF除了用GloVe进行编码外，其他参数都只是从该任务的监督数据集上学到的</li>
-</ul>
-<p>相同点：</p>
-<p><img alt="image-20220130225038687" src="../image/image-20220130225038687.png" /></p>
-<p>（BERT叠加了更多的attention（自注意力），研究表明，向BiDAF增加自注意力层也能提升效果。）</p>
-<p>此外，SpanBERT（如下图）通过改变mask数据和训练任务也能提升效果：</p>
-<ul>
-<li>用连续mask取代随机mask</li>
-<li>用span的两个节点预测所有mask的单词。（相当于把span的信息压缩到两个节点中）</li>
-</ul>
-<p><img alt="image-20220130230022939" src="../image/image-20220130230022939.png" /></p>
-<h2 id="3">3 开放领域的问答任务<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<h3 id="31">3.1 开放域问答的特点<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p><img alt="image-20220130231057445" src="../image/image-20220130231057445.png" /></p>
-<h3 id="32-retriever-reader">3.2 Retriever-reader架构<a class="headerlink" href="#32-retriever-reader" title="Permanent link">&para;</a></h3>
-<p>参考文献：Chen et al., 2017. Reading Wikipedia to Answer Open-domain Questions </p>
-<p><img alt="image-20220130232756421" src="../image/image-20220130232756421.png" /></p>
-<h3 id="33">3.3 开放域问答最新进展<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
-<p>Recent work[1] shows that it is beneficial to generate answers instead of to extract answers. </p>
-<p>Large language models can do open-domain QA well without an explicit retriever stage[2].</p>
-<p>Maybe the reader model is not necessary too[3-4]. It is possible to encode all the phrases (60 billion phrases in Wikipedia) using <strong>dense</strong> vectors and only do nearest neighbor search without a BERT model at inference time! </p>
-<ul>
-<li>参考文献</li>
-</ul>
+<h1 id="03-tensorir">03 张量程序抽象案例研究：TensorIR<a class="headerlink" href="#03-tensorir" title="Permanent link">&para;</a></h1>
+<p>TensorIR 是标准机器学习编译框架 Apache TVM 中使用的张量程序抽象。</p>
 <blockquote>
-<p>[1] Izacard and Grave 2020. Leveraging Passage Retrieval with Generative Models for Open Domain Question Answering </p>
-<p>[2] Roberts et al., 2020. How Much Knowledge Can You Pack Into the Parameters of a Language Model? </p>
-<p>[3] Seo et al., 2019. Real-Time Open-Domain Question Answering with Dense-Sparse Phrase Index </p>
-<p>[4] Lee et al., 2020. Learning Dense Representations of Phrases at Scale </p>
+<p>使用张量程序抽象的主要目的是表示循环和相关的硬件加速选择，如多线程、特殊硬件指令的使用和内存访问。</p>
 </blockquote>
-<p>深入了解的话见<a href="https://scholar.google.com/citations?user=sVR8ktkAAAAJ&amp;hl=zh-CN">Danqi Chen</a>的代表作。</p>
-<p><img alt="image-20220131005919576" src="../image/image-20220131005919576.png" /></p>
+<h2 id="-tensorir">张量函数抽象 - TensorIR实例<a class="headerlink" href="#-tensorir" title="Permanent link">&para;</a></h2>
+<p>对于两个大小为<span class="arithmatex"><span class="MathJax_Preview">128×128</span><script type="math/tex">128×128</script></span>的矩阵 A 和 B，进行如下两步的张量计算：一个线性层（矩阵乘法）与一个 ReLU 激活层。
+$$
+Y_{i,j} = \sum_k{A_{i,k}×{B_{k,j}}}
+$$</p>
+<div class="arithmatex">
+<div class="MathJax_Preview">
+C_{i,j} = relu(Y_{i,j}) = max(Y_{i,j},0)
+</div>
+<script type="math/tex; mode=display">
+C_{i,j} = relu(Y_{i,j}) = max(Y_{i,j},0)
+</script>
+</div>
+<h3 id="numpy">NumPy表示<a class="headerlink" href="#numpy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">dtype</span> <span class="o">=</span> <span class="s2">&quot;float32&quot;</span>
+<span class="n">a_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+<span class="n">b_np</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">dtype</span><span class="p">)</span>
+<span class="c1"># a @ b is equivalent to np.matmul(a, b)</span>
+<span class="n">c_mm_relu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">a_np</span> <span class="o">@</span> <span class="n">b_np</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="numpymm_relu">NumPy实现mm_relu<a class="headerlink" href="#numpymm_relu" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">lnumpy_mm_relu</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">,</span> <span class="n">C</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                    <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">):</span>
+            <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="tensorir-mm_relu">TensorIR 实现mm_relu<a class="headerlink" href="#tensorir-mm_relu" title="Permanent link">&para;</a></h3>
+<p>下面的代码块展示了 <code>mm_relu</code> 的 TensorIR 实现。这里的代码是用一种名为 <strong>TVMScript</strong> 的语言实现的，它是一种嵌入在 Python AST 中的特定领域方言。</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@tvm</span><span class="o">.</span><span class="n">script</span><span class="o">.</span><span class="n">ir_module</span>
+<span class="k">class</span> <span class="nc">MyModule</span><span class="p">:</span>
+    <span class="nd">@T</span><span class="o">.</span><span class="n">prim_func</span>
+    <span class="k">def</span> <span class="nf">mm_relu</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">Buffer</span><span class="p">[(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="s2">&quot;float32&quot;</span><span class="p">],</span>
+                <span class="n">B</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">Buffer</span><span class="p">[(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="s2">&quot;float32&quot;</span><span class="p">],</span>
+                <span class="n">C</span><span class="p">:</span> <span class="n">T</span><span class="o">.</span><span class="n">Buffer</span><span class="p">[(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="s2">&quot;float32&quot;</span><span class="p">]):</span>
+        <span class="n">T</span><span class="o">.</span><span class="n">func_attr</span><span class="p">({</span><span class="s2">&quot;global_symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;mm_relu&quot;</span><span class="p">,</span> <span class="s2">&quot;tir.noalias&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+        <span class="n">Y</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">alloc_buffer</span><span class="p">((</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">T</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">T</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">):</span>
+                <span class="n">vi</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">spatial</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                <span class="n">vj</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">spatial</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+                <span class="n">vk</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+                <span class="k">with</span> <span class="n">T</span><span class="o">.</span><span class="n">init</span><span class="p">():</span>
+                    <span class="n">Y</span><span class="p">[</span><span class="n">vi</span><span class="p">,</span> <span class="n">vj</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+                <span class="n">Y</span><span class="p">[</span><span class="n">vi</span><span class="p">,</span> <span class="n">vj</span><span class="p">]</span> <span class="o">=</span> <span class="n">Y</span><span class="p">[</span><span class="n">vi</span><span class="p">,</span> <span class="n">vj</span><span class="p">]</span> <span class="o">+</span> <span class="n">A</span><span class="p">[</span><span class="n">vi</span><span class="p">,</span> <span class="n">vk</span><span class="p">]</span> <span class="o">*</span> <span class="n">B</span><span class="p">[</span><span class="n">vk</span><span class="p">,</span> <span class="n">vj</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">T</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">T</span><span class="o">.</span><span class="n">block</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">):</span>
+                <span class="n">vi</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">spatial</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+                <span class="n">vj</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">spatial</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+                <span class="n">C</span><span class="p">[</span><span class="n">vi</span><span class="p">,</span> <span class="n">vj</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">Y</span><span class="p">[</span><span class="n">vi</span><span class="p">,</span> <span class="n">vj</span><span class="p">],</span> <span class="n">T</span><span class="o">.</span><span class="n">float32</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="tensorirnumpy">TensorIR和NumPy代码对应⭐<a class="headerlink" href="#tensorirnumpy" title="Permanent link">&para;</a></h3>
+<p><img alt="image-20220714234654990" src="../image/image-20220714234654990.png" /></p>
+<h3 id="block-axis">块和块轴（Block axis）<a class="headerlink" href="#block-axis" title="Permanent link">&para;</a></h3>
+<p><strong>TensorIR 包含一个名为 <code>T.block</code> 的额外结构。块</strong> 是 TensorIR 中的基本计算单位。一个块包含一组块轴（<code>vi、vj、vk</code>）和围绕它们定义的计算。</p>
+<div class="highlight"><pre><span></span><code><span class="n">vi</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">spatial</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+<span class="n">vj</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">spatial</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+<span class="n">vk</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="n">reduce</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span>
+</code></pre></div>
+<p>上面三行声明了关于块轴的**关键性质**，语法如下。</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">block_axis</span><span class="p">]</span> <span class="o">=</span> <span class="n">T</span><span class="o">.</span><span class="n">axis</span><span class="o">.</span><span class="p">[</span><span class="n">axis_type</span><span class="p">]([</span><span class="n">axis_range</span><span class="p">],</span> <span class="p">[</span><span class="n">mapped_value</span><span class="p">])</span>
+</code></pre></div>
+<p>这三行包含以下信息：</p>
+<ul>
+<li>定义了 <code>vi</code>、<code>vj</code>、<code>vk</code> 应被绑定到的位置（在本例中为 <code>i</code>、<code>j</code> 和 <code>k</code>）；</li>
+<li>声明了 <code>vi</code>、<code>vj</code>、<code>vk</code> 的原始范围（<code>T.axis.spatial(128, i)</code> 中的 <code>128</code>）；</li>
+<li>声明了块轴的属性（<code>spatial</code>, <code>reduce</code>）。</li>
+</ul>
+<p>轴属性标记了轴与正在执行的计算之间的关系。 </p>
+<p><img alt="../_images/tensor_ir_block_axis.png" src="../image/tensor_ir_block_axis.png" /></p>
+<p>块 <code>Y</code> 通过读取来自 <code>A[vi, vk]</code> 和 <code>B[vk, vj]</code> 的值来计算结果 <code>Y[vi, vj]</code>，并对所有可能的 <code>vk</code> 执行求和。 在这个特定示例中，如果我们将 <code>vi</code>、<code>vj</code> 固定为 <code>(0, 1)</code>，并对 <code>vk in range(0, 128)</code> 执行块 <code>Y</code>，我们可以独立于其他可能的位置（具有不同 <code>vi</code>, <code>vj</code> 值的位置）有效地计算 <code>C[0, 1]</code>。我们可以称 <code>vi</code>、<code>vj</code> 为**空间轴**，涉及归约（<code>vk</code>）的轴被命名为**归约轴**。</p>
+<h3 id="_1">函数属性和装饰器<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>函数属性信息包含关于函数的额外信息。</p>
+<div class="highlight"><pre><span></span><code><span class="n">T</span><span class="o">.</span><span class="n">func_attr</span><span class="p">({</span><span class="s2">&quot;global_symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;mm_relu&quot;</span><span class="p">,</span> <span class="s2">&quot;tir.noalias&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</code></pre></div>
+<p><code>@tvm.script.ir_module</code> 和 <code>@T.prim_func</code> 这两个装饰器用于表示对应部分的类型。</p>
+<p><code>@tvm.script.ir_module</code> 表示 <code>MyModule</code> 是一个 IRModule。IRModule 是在机器学习编译中保存张量函数集合的容器对象。</p>
+<h3 id="_2">小结<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>到目前为止，我们一同看过了一个 TensorIR 程序示例，并涵盖了大部分元素，包括：</p>
+<ul>
+<li>参数和中间临时内存中的缓冲区声明；</li>
+<li>For 循环迭代；</li>
+<li>**块**和块轴属性。</li>
+</ul>
+<h2 id="_3">张量函数变换<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 15, 2022</span>
       
     
   </small>
@@ -1456,7 +1226,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../Lecture10/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lecture10 预训练" rel="prev">
+        <a href="../ml-compilation-02/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 02 张量程序抽象" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1465,20 +1235,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Lecture10 预训练
+              02 张量程序抽象
             </div>
           </div>
         </a>
       
       
         
-        <a href="../nlp-transformer-task01/" class="md-footer__link md-footer__link--next" aria-label="Next: Task01 NLP学习概览" rel="next">
+        <a href="../open-source-projects/" class="md-footer__link md-footer__link--next" aria-label="Next: Open Source Projects" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Task01 NLP学习概览
+              Open Source Projects
             </div>
           </div>
           <div class="md-footer__button md-icon">
