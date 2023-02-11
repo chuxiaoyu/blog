@@ -1,18 +1,15 @@
 site_name: Xiaoyu's Blog
-repo_url: https://github.com/chuxiaoyu/blog
+# repo_url: https://github.com/chuxiaoyu/blog
 copyright: '&copy; 2022 by Xiaoyu Chu'
 
 theme:
   name: material
-  favicon: image/logo.png
-  logo: image/logo2.png
+  favicon: image/vu-circle.png
+  logo: image/logo.jpg
   font:
     text: Source Serif Pro
-
   palette:
     primary: black
-
-
     # accent: black
   # feature:
   #   tabs: true
@@ -30,6 +27,7 @@ nav:
 - 🏠 Home: index.md
 - 🤖 Machine Learning:
   - 目录: ml-index.md
+  - Deep Learning Specialization: ml-deep-learning.md
   - CS224n自然语言处理:
     - Lecture07 机器翻译、seq2seq模型、注意力机制: Lecture07.md
     - Lecture09 自注意力模型、Transformers: Lecture09.md
@@ -49,6 +47,7 @@ nav:
     - Chapter04 PyTorch基础实战——FashionMNIST图像分类: pytorch-chap04.md
 - 💾 Computer Systems:
   - 目录: sys-index.md
+  - 人工智能的基石：算力、计算和计算设施: computing-and-computing-power.md
   - Nand2Tetris 计算机系统要素:
     - Nand2Tetris Part1 (Hardware): nand2tetris_part_1.md
     - Nand2Tetris Part2 (Software): nand2tetris_part_2.md
@@ -56,15 +55,12 @@ nav:
     - 01 机器学习编译概述: ml-compilation-01.md
     - 02 张量程序抽象: ml-compilation-02.md
     - 03 张量程序抽象案例研究：TensorIR: ml-compilation-03.md
+    - 04 端到端模型整合: ml-compilation-04.md
+    - 05 自动程序优化: ml-compilation-05.md
 - 📝 Posts:
+  - Types of CS Paper: post-types-of-paper.md
   - Open Source Projects: open-source-projects.md
-# - Photos:
-  # - Introduction: photo-index.md
-# - 随笔:
-  # - 科研学术类播客推荐: podcast.md
 - 🧑‍🚀 About: https://www.chuxiaoyu.cn/
-
-
 
 
 

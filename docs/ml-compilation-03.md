@@ -1,5 +1,13 @@
 # 03 张量程序抽象案例研究：TensorIR
 
+参考资料
+
+- 英文课程主页 https://mlc.ai/summer22/ 英文课程材料 https://mlc.ai/index.html
+
+- 中文课程主页 https://mlc.ai/summer22-zh/ 中文课程材料 https://mlc.ai/zh/index.html
+
+---
+
 TensorIR 是标准机器学习编译框架 Apache TVM 中使用的张量程序抽象。
 
 > 使用张量程序抽象的主要目的是表示循环和相关的硬件加速选择，如多线程、特殊硬件指令的使用和内存访问。
@@ -119,7 +127,82 @@ T.func_attr({"global_symbol": "mm_relu", "tir.noalias": True})
 
 - 参数和中间临时内存中的缓冲区声明；
 - For 循环迭代；
-- **块**和块轴属性。
+- 块和块轴属性。
 
 ## 张量函数变换
+
+在实践中，可以有多种方法来实现相同的功能，并且每种实现都可能导致不同的性能。
+
+```Python
+# 方法1
+def lnumpy_mm_relu(A: np.ndarray, B: np.ndarray, C: np.ndarray):
+    Y = np.empty((128, 128), dtype="float32")
+    for i in range(128):
+        for j in range(128):
+            for k in range(128):
+                if k == 0:
+                    Y[i, j] = 0
+                Y[i, j] = Y[i, j] + A[i, k] * B[k, j]
+    for i in range(128):
+        for j in range(128):
+            C[i, j] = max(Y[i, j], 0)
+```
+
+```Python
+# 方法2
+def lnumpy_mm_relu_v2(A: np.ndarray, B: np.ndarray, C: np.ndarray):
+    Y = np.empty((128, 128), dtype="float32")
+    for i in range(128):
+        for j0 in range(32):
+            for k in range(128):
+                for j1 in range(4):
+                    j = j0 * 4 + j1
+                    if k == 0:
+                        Y[i, j] = 0
+                    Y[i, j] = Y[i, j] + A[i, k] * B[k, j]
+    for i in range(128):
+        for j in range(128):
+            C[i, j] = max(Y[i, j], 0)
+
+c_np = np.empty((128, 128), dtype=dtype)
+lnumpy_mm_relu_v2(a_np, b_np, c_np)
+np.testing.assert_allclose(c_mm_relu, c_np, rtol=1e-5)
+```
+
+```Python
+# 方法3
+def lnumpy_mm_relu_v3(A: np.ndarray, B: np.ndarray, C: np.ndarray):
+    Y = np.empty((128, 128), dtype="float32")
+    for i in range(128):
+        for j0 in range(32):
+            # Y_init
+            for j1 in range(4):
+                j = j0 * 4 + j1
+                Y[i, j] = 0
+            # Y_update
+            for k in range(128):
+                for j1 in range(4):
+                    j = j0 * 4 + j1
+                    Y[i, j] = Y[i, j] + A[i, k] * B[k, j]
+            # C
+            for j1 in range(4):
+                j = j0 * 4 + j1
+                C[i, j] = max(Y[i, j], 0)
+
+c_np = np.empty((128, 128), dtype=dtype)
+lnumpy_mm_relu_v3(a_np, b_np, c_np)
+np.testing.assert_allclose(c_mm_relu, c_np, rtol=1e-5)
+```
+
+## 机器学习编译流程
+
+标准开发过程：
+
+![../_images/standard_process.png](image/standard_process.png)
+
+机器学习编译流程：
+
+![../_images/mlc_process.png](image/mlc_process.png)
+
+机器学习编译流程的主要区别在于 IRModule（程序）之间的程序变换。所以我们不仅可以通过开发（通过手动编写代码【TVMScript】或生成代码【张量表达式】）提出程序变体，还可以通过变换张量程序来获得变体。
 

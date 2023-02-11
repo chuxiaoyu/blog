@@ -1,10 +1,12 @@
 # 01 机器学习编译概述
 
-## 参考资料
+参考资料
 
-英文课程主页 https://mlc.ai/summer22/ 英文课程材料 https://mlc.ai/index.html
+- 英文课程主页 https://mlc.ai/summer22/ 英文课程材料 https://mlc.ai/index.html
 
-中文课程主页 https://mlc.ai/summer22-zh/ 中文课程材料 https://mlc.ai/zh/index.html
+- 中文课程主页 https://mlc.ai/summer22-zh/ 中文课程材料 https://mlc.ai/zh/index.html
+
+---
 
 ## 机器学习编译及目标
 
@@ -42,3 +44,4 @@
 大多数机器学习编译是在做张量函数之间的变换。
 
 课程主要包括计算图、张量程序、算子库、硬件指令四个层面的抽象。
+

@@ -5,3 +5,19 @@
 
 
 HELLO<<
+
+<script src="https://giscus.app/client.js"
+        data-repo="chuxiaoyu/blog"
+        data-repo-id="R_kgDOHVRSZw"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOHVRSZ84CQPQ-"
+        data-mapping="pathname"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="light"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+</script>
