@@ -13,7 +13,7 @@
     
     
       
-        <title>Task02 学习Attentioin和Transformer - Xiaoyu's Blog</title>
+        <title>06 与机器学习框架的整合 - Xiaoyu's Blog</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#task02-attentiointransformer" class="md-skip">
+        <a href="#06" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Task02 学习Attentioin和Transformer
+              06 与机器学习框架的整合
             
           </span>
         </div>
@@ -162,15 +162,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../ml-index/" class="md-tabs__link md-tabs__link--active">
+      <a href="../ml-index/" class="md-tabs__link">
         🤖 Machine Learning
       </a>
     </li>
@@ -279,14 +277,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -424,14 +420,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
@@ -466,187 +460,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Task02 学习Attentioin和Transformer
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task02/" class="md-nav__link">
         Task02 学习Attentioin和Transformer
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#attention" class="md-nav__link">
-    Attention
-  </a>
-  
-    <nav class="md-nav" aria-label="Attention">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#seq2seq" class="md-nav__link">
-    seq2seq
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attention_1" class="md-nav__link">
-    Attention
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformer" class="md-nav__link">
-    Transformer
-  </a>
-  
-    <nav class="md-nav" aria-label="Transformer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    模型架构
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    模型输入
-  </a>
-  
-    <nav class="md-nav" aria-label="模型输入">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    词向量
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    位置向量
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    编码器和解码器
-  </a>
-  
-    <nav class="md-nav" aria-label="编码器和解码器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#self-attention" class="md-nav__link">
-    Self-Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-head-self-attention" class="md-nav__link">
-    Multi Head Self-Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    残差链接和归一化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    模型输出
-  </a>
-  
-    <nav class="md-nav" aria-label="模型输出">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#softmax" class="md-nav__link">
-    线性层和softmax
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    损失函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1133,156 +951,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#attention" class="md-nav__link">
-    Attention
-  </a>
-  
-    <nav class="md-nav" aria-label="Attention">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#seq2seq" class="md-nav__link">
-    seq2seq
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attention_1" class="md-nav__link">
-    Attention
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformer" class="md-nav__link">
-    Transformer
-  </a>
-  
-    <nav class="md-nav" aria-label="Transformer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    模型架构
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    模型输入
-  </a>
-  
-    <nav class="md-nav" aria-label="模型输入">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    词向量
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    位置向量
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    编码器和解码器
-  </a>
-  
-    <nav class="md-nav" aria-label="编码器和解码器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#self-attention" class="md-nav__link">
-    Self-Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-head-self-attention" class="md-nav__link">
-    Multi Head Self-Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    残差链接和归一化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    模型输出
-  </a>
-  
-    <nav class="md-nav" aria-label="模型输出">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#softmax" class="md-nav__link">
-    线性层和softmax
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    损失函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1294,111 +962,27 @@
               
                 
 
-<h1 id="task02-attentiointransformer">Task02 学习Attentioin和Transformer<a class="headerlink" href="#task02-attentiointransformer" title="Permanent link">&para;</a></h1>
-<h2 id="attention">Attention<a class="headerlink" href="#attention" title="Permanent link">&para;</a></h2>
-<h3 id="seq2seq">seq2seq<a class="headerlink" href="#seq2seq" title="Permanent link">&para;</a></h3>
-<p>seq2seq是一种常见的NLP模型结构，全称是：sequence to sequence，翻译为“序列到序列”。顾名思义：从一个文本序列得到一个新的文本序列。典型的任务有：机器翻译任务，文本摘要任务。</p>
-<p>seq2seq模型由编码器（encoder）和解码器（decoder）组成，编码器用来分析输入序列，解码器用来生成输出序列。编码器会处理输入序列中的每个元素，把这些信息转换成为一个背景向量（context vector）。当我们处理完整个输入序列后，编码器把背景向量发送给解码器，解码器通过背景向量中的信息，逐个元素输出新的序列。</p>
-<p><strong>在transformer模型之前，seq2seq中的编码器和解码器一般采用循环神经网络（RNN）</strong>，虽然非常经典，但是局限性也非常大。最大的局限性就在于编码器和解码器之间的唯一联系就是一个固定长度的context向量。也就是说，编码器要将整个序列的信息压缩进一个固定长度的向量中。这样做存在两个弊端：
-- 语义向量可能无法完全表示整个序列的信息
-- 先输入到网络的内容携带的信息会被后输入的信息覆盖掉，输入序列越长，这个现象就越严重</p>
-<h3 id="attention_1">Attention<a class="headerlink" href="#attention_1" title="Permanent link">&para;</a></h3>
-<p>为了解决seq2seq模型中的两个弊端，Bahdanau等人在论文《Neural Machine Translation by Jointly Learning to Align and Translate》中提出使用Attention机制，使得seq2seq模型可以有区分度、有重点地关注输入序列，从而极大地提高了机器翻译的质量。</p>
-<p>一个有注意力机制的seq2seq与经典的seq2seq主要有2点不同：
-1. 首先，编码器会把更多的数据传递给解码器。编码器把所有时间步的 hidden state（隐藏层状态）传递给解码器，而不是只传递最后一个 hidden state（隐藏层状态）
-2. 注意力模型的解码器在产生输出之前，做了一个额外的attention处理</p>
-<h2 id="transformer">Transformer<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h2>
-<h3 id="_1">模型架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>transformer原论文的架构图：</p>
-<p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true" width="400" alt="" align="center" /></p>
-<p>一个更清晰的架构图：
-<img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_2.png?raw=true" width="600" alt="" align="center" /></p>
-<p>从输入到输出拆开看就是：
-- INPUT：input vector + position encoding
-- ENCODERs（×6），and each encoder includes：
-  - input
-  - multi-head self-attention
-  - residual connection&amp;norm
-  - full-connected network
-  - residual connection&amp;norm
-  - output
-- DECODERs（×6），and each decoder includes：
-  - input 
-  - Masked multihead self-attention
-  - residual connection&amp;norm
-  - multi-head self-attention
-  - residual connection&amp;norm
-  - full-connected network
-  - residual connection&amp;norm
-  - output
-- OUTPUT：
-  - output (decoder's)
-  - linear layer
-  - softmax layer
-  - output</p>
-<h3 id="_2">模型输入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="_3">词向量<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>和常见的NLP任务一样，我们首先会使用词嵌入算法（embedding），将输入文本序列的每个词转换为一个词向量。</p>
-<h4 id="_4">位置向量<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>Transformer模型对每个输入的词向量都加上了一个位置向量。这些向量有助于确定每个单词的位置特征，或者句子中不同单词之间的距离特征。词向量加上位置向量背后的直觉是：将这些表示位置的向量添加到词向量中，得到的新向量，可以为模型提供更多有意义的信息，比如词的位置，词之间的距离等。</p>
-<p><em>（生成位置编码向量的方法有很多种）</em></p>
-<h3 id="_5">编码器和解码器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><em>注：1. 编码器和解码器中有相似的模块和结构，所以合并到一起介绍。</em>
-<em>2. 本部分按照李宏毅老师的Attention，Transformer部分的课程PPT来，因为lee的课程对新手更友好。</em></p>
-<h4 id="self-attention">Self-Attention<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h4>
-<p>self-attention对于每个向量都会考虑整个sequence的信息后输出一个向量，self-attention结构如下：
-<img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/04_attention_1.png?raw=true" width="600" alt="" align="center" />
-FC：Fully-connected network 全连接网络
-ai: 输入变量。可能是整个网络的输入，也可能是某个隐藏层的输出
-bi: 考虑整个sequence信息后的输出变量</p>
-<p>矩阵计算：
-<img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/13_matrix_4.jpg?raw=true" width="300" alt="" align="center" />
-目标：根据输入向量矩阵I，计算输出向量矩阵O。矩阵运算过程：
-1. 矩阵I分别乘以Wq, Wk, Wv（参数矩阵，需要模型进行学习），得到矩阵Q, K, V。
-2. 矩阵K的转置乘以Q，得到注意力权重矩阵A，归一化得到矩阵A’。
-3. 矩阵V乘矩阵A‘，得到输出向量矩阵O。</p>
-<h4 id="multi-head-self-attention">Multi Head Self-Attention<a class="headerlink" href="#multi-head-self-attention" title="Permanent link">&para;</a></h4>
-<p><em>简单地说，多了几组Q，K，V。在Self-Attention中，我们是使用𝑞去寻找与之相关的𝑘，但是这个相关性并不一定有一种。那多种相关性体现到计算方式上就是有多个矩阵𝑞，不同的𝑞负责代表不同的相关性。</em></p>
-<p>Transformer 的论文通过增加多头注意力机制（一组注意力称为一个 attention head），进一步完善了Self-Attention。这种机制从如下两个方面增强了attention层的能力：
-- 它扩展了模型关注不同位置的能力。
-- 多头注意力机制赋予attention层多个“子表示空间”。</p>
-<h4 id="_6">残差链接和归一化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>残差链接：一种把input向量和output向量直接加起来的架构。
-归一化：把数据映射到0～1范围之内处理。</p>
-<h3 id="_7">模型输出<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<h4 id="softmax">线性层和softmax<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h4>
-<p>Decoder 最终的输出是一个向量，其中每个元素是浮点数。我们怎么把这个向量转换为单词呢？这是线性层和softmax完成的。</p>
-<p>线性层就是一个普通的全连接神经网络，可以把解码器输出的向量，映射到一个更大的向量，这个向量称为 logits 向量：假设我们的模型有 10000 个英语单词（模型的输出词汇表），此 logits 向量便会有 10000 个数字，每个数表示一个单词的分数。</p>
-<p>然后，Softmax 层会把这些分数转换为概率（把所有的分数转换为正数，并且加起来等于 1）。然后选择最高概率的那个数字对应的词，就是这个时间步的输出单词。</p>
-<h4 id="_8">损失函数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p>Transformer训练的时候，需要将解码器的输出和label一同送入损失函数，以获得loss，最终模型根据loss进行方向传播。</p>
-<p>只要Transformer解码器预测了组概率，我们就可以把这组概率和正确的输出概率做对比，然后使用反向传播来调整模型的权重，使得输出的概率分布更加接近整数输出。</p>
-<p>那我们要怎么比较两个概率分布呢？：我们可以简单的用两组概率向量的的空间距离作为loss（向量相减，然后求平方和，再开方），当然也可以使用交叉熵(cross-entropy)]和KL 散度(Kullback–Leibler divergence)。</p>
-<h2 id="_9">参考资料<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<p><strong>理论部分</strong>
-[1] (强推)李宏毅2021春机器学习课程 <a href="https://www.bilibili.com/video/BV1Wv411h7kN?from=search&amp;seid=17090062977285779802&amp;spm_id_from=333.337.0.0">https://www.bilibili.com/video/BV1Wv411h7kN?from=search&amp;seid=17090062977285779802&amp;spm_id_from=333.337.0.0</a>
-[2] <strong>基于transformers的自然语言处理(NLP)入门（涵盖了图解系列、annotated transformer、huggingface）</strong> <a href="https://github.com/datawhalechina/learn-nlp-with-transformers">https://github.com/datawhalechina/learn-nlp-with-transformers</a>
-[3] 图解transformer|The Illustrated Transformer <a href="http://jalammar.github.io/illustrated-transformer/">http://jalammar.github.io/illustrated-transformer/</a>
-[4] 图解seq2seq, attention|Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention) <a href="https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/">https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/</a></p>
-<p><strong>代码部分</strong>
-[5] The Annotated Transformer <a href="http://nlp.seas.harvard.edu//2018/04/03/attention.html">http://nlp.seas.harvard.edu//2018/04/03/attention.html</a>
-[6] Huggingface/transformers <a href="https://github.com/huggingface/transformers/blob/master/README_zh-hans.md">https://github.com/huggingface/transformers/blob/master/README_zh-hans.md</a></p>
-<p><strong>论文部分</strong>
-Attention is all "we" need.</p>
-<p><strong>其他不错的博客或教程</strong>
-[7] 基于transformers的自然语言处理(NLP)入门--在线阅读 <a href="https://datawhalechina.github.io/learn-nlp-with-transformers/#/">https://datawhalechina.github.io/learn-nlp-with-transformers/#/</a>
-[8] 李宏毅2021春机器学习课程笔记——自注意力机制 <a href="https://www.cnblogs.com/sykline/p/14730088.html">https://www.cnblogs.com/sykline/p/14730088.html</a>
-[9] 李宏毅2021春机器学习课程笔记——Transformer模型 <a href="https://www.cnblogs.com/sykline/p/14785552.html">https://www.cnblogs.com/sykline/p/14785552.html</a>
-[10] 李宏毅机器学习学习笔记——自注意力机制 <a href="https://blog.csdn.net/p_memory/article/details/116271274">https://blog.csdn.net/p_memory/article/details/116271274</a>
-[11] 车万翔-自然语言处理新范式：基于预训练的方法【讲座+PPT】 <a href="https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_611f48f3e4b02ac39d12246f/3?fromH5=true">https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_611f48f3e4b02ac39d12246f/3?fromH5=true</a>
-[12] 苏剑林-《Attention is All You Need》浅读（简介+代码）<a href="https://spaces.ac.cn/archives/4765">https://spaces.ac.cn/archives/4765</a></p>
+<h1 id="06">06 与机器学习框架的整合<a class="headerlink" href="#06" title="Permanent link">&para;</a></h1>
+<p>参考资料</p>
+<ul>
+<li>
+<p>英文课程主页 <a href="https://mlc.ai/summer22/">https://mlc.ai/summer22/</a> 英文课程材料 <a href="https://mlc.ai/index.html">https://mlc.ai/index.html</a></p>
+</li>
+<li>
+<p>中文课程主页 <a href="https://mlc.ai/summer22-zh/">https://mlc.ai/summer22-zh/</a> 中文课程材料 <a href="https://mlc.ai/zh/index.html">https://mlc.ai/zh/index.html</a></p>
+</li>
+<li>
+<p>⭐️本节代码：</p>
+</li>
+</ul>
+<p>本章将讨论如何将机器学习模型从现有的机器学习框架引入 MLC 流程。</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2023</span>
       
     
   </small>
@@ -1412,41 +996,6 @@ Attention is all "we" need.</p>
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../nlp-transformer-task01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Task01 NLP学习概览" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Task01 NLP学习概览
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../nlp-transformer-task03/" class="md-footer__link md-footer__link--next" aria-label="Next: Task03 学习BERT" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Task03 学习BERT
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

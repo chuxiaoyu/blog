@@ -13,7 +13,7 @@
     
     
       
-        <title>Task02 学习Attentioin和Transformer - Xiaoyu's Blog</title>
+        <title>CSAPP概念整理（一） - Xiaoyu's Blog</title>
       
     
     
@@ -62,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#task02-attentiointransformer" class="md-skip">
+        <a href="#csapp" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Task02 学习Attentioin和Transformer
+              CSAPP概念整理（一）
             
           </span>
         </div>
@@ -162,15 +162,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../ml-index/" class="md-tabs__link md-tabs__link--active">
+      <a href="../ml-index/" class="md-tabs__link">
         🤖 Machine Learning
       </a>
     </li>
@@ -279,14 +277,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -424,14 +420,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
       
       
       
@@ -466,187 +460,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Task02 学习Attentioin和Transformer
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task02/" class="md-nav__link">
         Task02 学习Attentioin和Transformer
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#attention" class="md-nav__link">
-    Attention
-  </a>
-  
-    <nav class="md-nav" aria-label="Attention">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#seq2seq" class="md-nav__link">
-    seq2seq
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attention_1" class="md-nav__link">
-    Attention
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformer" class="md-nav__link">
-    Transformer
-  </a>
-  
-    <nav class="md-nav" aria-label="Transformer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    模型架构
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    模型输入
-  </a>
-  
-    <nav class="md-nav" aria-label="模型输入">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    词向量
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    位置向量
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    编码器和解码器
-  </a>
-  
-    <nav class="md-nav" aria-label="编码器和解码器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#self-attention" class="md-nav__link">
-    Self-Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-head-self-attention" class="md-nav__link">
-    Multi Head Self-Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    残差链接和归一化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    模型输出
-  </a>
-  
-    <nav class="md-nav" aria-label="模型输出">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#softmax" class="md-nav__link">
-    线性层和softmax
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    损失函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1133,156 +951,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#attention" class="md-nav__link">
-    Attention
-  </a>
-  
-    <nav class="md-nav" aria-label="Attention">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#seq2seq" class="md-nav__link">
-    seq2seq
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attention_1" class="md-nav__link">
-    Attention
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#transformer" class="md-nav__link">
-    Transformer
-  </a>
-  
-    <nav class="md-nav" aria-label="Transformer">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    模型架构
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    模型输入
-  </a>
-  
-    <nav class="md-nav" aria-label="模型输入">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    词向量
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    位置向量
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    编码器和解码器
-  </a>
-  
-    <nav class="md-nav" aria-label="编码器和解码器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#self-attention" class="md-nav__link">
-    Self-Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multi-head-self-attention" class="md-nav__link">
-    Multi Head Self-Attention
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    残差链接和归一化
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    模型输出
-  </a>
-  
-    <nav class="md-nav" aria-label="模型输出">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#softmax" class="md-nav__link">
-    线性层和softmax
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    损失函数
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    参考资料
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1294,111 +962,183 @@
               
                 
 
-<h1 id="task02-attentiointransformer">Task02 学习Attentioin和Transformer<a class="headerlink" href="#task02-attentiointransformer" title="Permanent link">&para;</a></h1>
-<h2 id="attention">Attention<a class="headerlink" href="#attention" title="Permanent link">&para;</a></h2>
-<h3 id="seq2seq">seq2seq<a class="headerlink" href="#seq2seq" title="Permanent link">&para;</a></h3>
-<p>seq2seq是一种常见的NLP模型结构，全称是：sequence to sequence，翻译为“序列到序列”。顾名思义：从一个文本序列得到一个新的文本序列。典型的任务有：机器翻译任务，文本摘要任务。</p>
-<p>seq2seq模型由编码器（encoder）和解码器（decoder）组成，编码器用来分析输入序列，解码器用来生成输出序列。编码器会处理输入序列中的每个元素，把这些信息转换成为一个背景向量（context vector）。当我们处理完整个输入序列后，编码器把背景向量发送给解码器，解码器通过背景向量中的信息，逐个元素输出新的序列。</p>
-<p><strong>在transformer模型之前，seq2seq中的编码器和解码器一般采用循环神经网络（RNN）</strong>，虽然非常经典，但是局限性也非常大。最大的局限性就在于编码器和解码器之间的唯一联系就是一个固定长度的context向量。也就是说，编码器要将整个序列的信息压缩进一个固定长度的向量中。这样做存在两个弊端：
-- 语义向量可能无法完全表示整个序列的信息
-- 先输入到网络的内容携带的信息会被后输入的信息覆盖掉，输入序列越长，这个现象就越严重</p>
-<h3 id="attention_1">Attention<a class="headerlink" href="#attention_1" title="Permanent link">&para;</a></h3>
-<p>为了解决seq2seq模型中的两个弊端，Bahdanau等人在论文《Neural Machine Translation by Jointly Learning to Align and Translate》中提出使用Attention机制，使得seq2seq模型可以有区分度、有重点地关注输入序列，从而极大地提高了机器翻译的质量。</p>
-<p>一个有注意力机制的seq2seq与经典的seq2seq主要有2点不同：
-1. 首先，编码器会把更多的数据传递给解码器。编码器把所有时间步的 hidden state（隐藏层状态）传递给解码器，而不是只传递最后一个 hidden state（隐藏层状态）
-2. 注意力模型的解码器在产生输出之前，做了一个额外的attention处理</p>
-<h2 id="transformer">Transformer<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h2>
-<h3 id="_1">模型架构<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>transformer原论文的架构图：</p>
-<p><img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_1.png?raw=true" width="400" alt="" align="center" /></p>
-<p>一个更清晰的架构图：
-<img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/trm_2.png?raw=true" width="600" alt="" align="center" /></p>
-<p>从输入到输出拆开看就是：
-- INPUT：input vector + position encoding
-- ENCODERs（×6），and each encoder includes：
-  - input
-  - multi-head self-attention
-  - residual connection&amp;norm
-  - full-connected network
-  - residual connection&amp;norm
-  - output
-- DECODERs（×6），and each decoder includes：
-  - input 
-  - Masked multihead self-attention
-  - residual connection&amp;norm
-  - multi-head self-attention
-  - residual connection&amp;norm
-  - full-connected network
-  - residual connection&amp;norm
-  - output
-- OUTPUT：
-  - output (decoder's)
-  - linear layer
-  - softmax layer
-  - output</p>
-<h3 id="_2">模型输入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<h4 id="_3">词向量<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
-<p>和常见的NLP任务一样，我们首先会使用词嵌入算法（embedding），将输入文本序列的每个词转换为一个词向量。</p>
-<h4 id="_4">位置向量<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>Transformer模型对每个输入的词向量都加上了一个位置向量。这些向量有助于确定每个单词的位置特征，或者句子中不同单词之间的距离特征。词向量加上位置向量背后的直觉是：将这些表示位置的向量添加到词向量中，得到的新向量，可以为模型提供更多有意义的信息，比如词的位置，词之间的距离等。</p>
-<p><em>（生成位置编码向量的方法有很多种）</em></p>
-<h3 id="_5">编码器和解码器<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p><em>注：1. 编码器和解码器中有相似的模块和结构，所以合并到一起介绍。</em>
-<em>2. 本部分按照李宏毅老师的Attention，Transformer部分的课程PPT来，因为lee的课程对新手更友好。</em></p>
-<h4 id="self-attention">Self-Attention<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h4>
-<p>self-attention对于每个向量都会考虑整个sequence的信息后输出一个向量，self-attention结构如下：
-<img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/04_attention_1.png?raw=true" width="600" alt="" align="center" />
-FC：Fully-connected network 全连接网络
-ai: 输入变量。可能是整个网络的输入，也可能是某个隐藏层的输出
-bi: 考虑整个sequence信息后的输出变量</p>
-<p>矩阵计算：
-<img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/13_matrix_4.jpg?raw=true" width="300" alt="" align="center" />
-目标：根据输入向量矩阵I，计算输出向量矩阵O。矩阵运算过程：
-1. 矩阵I分别乘以Wq, Wk, Wv（参数矩阵，需要模型进行学习），得到矩阵Q, K, V。
-2. 矩阵K的转置乘以Q，得到注意力权重矩阵A，归一化得到矩阵A’。
-3. 矩阵V乘矩阵A‘，得到输出向量矩阵O。</p>
-<h4 id="multi-head-self-attention">Multi Head Self-Attention<a class="headerlink" href="#multi-head-self-attention" title="Permanent link">&para;</a></h4>
-<p><em>简单地说，多了几组Q，K，V。在Self-Attention中，我们是使用𝑞去寻找与之相关的𝑘，但是这个相关性并不一定有一种。那多种相关性体现到计算方式上就是有多个矩阵𝑞，不同的𝑞负责代表不同的相关性。</em></p>
-<p>Transformer 的论文通过增加多头注意力机制（一组注意力称为一个 attention head），进一步完善了Self-Attention。这种机制从如下两个方面增强了attention层的能力：
-- 它扩展了模型关注不同位置的能力。
-- 多头注意力机制赋予attention层多个“子表示空间”。</p>
-<h4 id="_6">残差链接和归一化<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>残差链接：一种把input向量和output向量直接加起来的架构。
-归一化：把数据映射到0～1范围之内处理。</p>
-<h3 id="_7">模型输出<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<h4 id="softmax">线性层和softmax<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h4>
-<p>Decoder 最终的输出是一个向量，其中每个元素是浮点数。我们怎么把这个向量转换为单词呢？这是线性层和softmax完成的。</p>
-<p>线性层就是一个普通的全连接神经网络，可以把解码器输出的向量，映射到一个更大的向量，这个向量称为 logits 向量：假设我们的模型有 10000 个英语单词（模型的输出词汇表），此 logits 向量便会有 10000 个数字，每个数表示一个单词的分数。</p>
-<p>然后，Softmax 层会把这些分数转换为概率（把所有的分数转换为正数，并且加起来等于 1）。然后选择最高概率的那个数字对应的词，就是这个时间步的输出单词。</p>
-<h4 id="_8">损失函数<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p>Transformer训练的时候，需要将解码器的输出和label一同送入损失函数，以获得loss，最终模型根据loss进行方向传播。</p>
-<p>只要Transformer解码器预测了组概率，我们就可以把这组概率和正确的输出概率做对比，然后使用反向传播来调整模型的权重，使得输出的概率分布更加接近整数输出。</p>
-<p>那我们要怎么比较两个概率分布呢？：我们可以简单的用两组概率向量的的空间距离作为loss（向量相减，然后求平方和，再开方），当然也可以使用交叉熵(cross-entropy)]和KL 散度(Kullback–Leibler divergence)。</p>
-<h2 id="_9">参考资料<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
-<p><strong>理论部分</strong>
-[1] (强推)李宏毅2021春机器学习课程 <a href="https://www.bilibili.com/video/BV1Wv411h7kN?from=search&amp;seid=17090062977285779802&amp;spm_id_from=333.337.0.0">https://www.bilibili.com/video/BV1Wv411h7kN?from=search&amp;seid=17090062977285779802&amp;spm_id_from=333.337.0.0</a>
-[2] <strong>基于transformers的自然语言处理(NLP)入门（涵盖了图解系列、annotated transformer、huggingface）</strong> <a href="https://github.com/datawhalechina/learn-nlp-with-transformers">https://github.com/datawhalechina/learn-nlp-with-transformers</a>
-[3] 图解transformer|The Illustrated Transformer <a href="http://jalammar.github.io/illustrated-transformer/">http://jalammar.github.io/illustrated-transformer/</a>
-[4] 图解seq2seq, attention|Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention) <a href="https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/">https://jalammar.github.io/visualizing-neural-machine-translation-mechanics-of-seq2seq-models-with-attention/</a></p>
-<p><strong>代码部分</strong>
-[5] The Annotated Transformer <a href="http://nlp.seas.harvard.edu//2018/04/03/attention.html">http://nlp.seas.harvard.edu//2018/04/03/attention.html</a>
-[6] Huggingface/transformers <a href="https://github.com/huggingface/transformers/blob/master/README_zh-hans.md">https://github.com/huggingface/transformers/blob/master/README_zh-hans.md</a></p>
-<p><strong>论文部分</strong>
-Attention is all "we" need.</p>
-<p><strong>其他不错的博客或教程</strong>
-[7] 基于transformers的自然语言处理(NLP)入门--在线阅读 <a href="https://datawhalechina.github.io/learn-nlp-with-transformers/#/">https://datawhalechina.github.io/learn-nlp-with-transformers/#/</a>
-[8] 李宏毅2021春机器学习课程笔记——自注意力机制 <a href="https://www.cnblogs.com/sykline/p/14730088.html">https://www.cnblogs.com/sykline/p/14730088.html</a>
-[9] 李宏毅2021春机器学习课程笔记——Transformer模型 <a href="https://www.cnblogs.com/sykline/p/14785552.html">https://www.cnblogs.com/sykline/p/14785552.html</a>
-[10] 李宏毅机器学习学习笔记——自注意力机制 <a href="https://blog.csdn.net/p_memory/article/details/116271274">https://blog.csdn.net/p_memory/article/details/116271274</a>
-[11] 车万翔-自然语言处理新范式：基于预训练的方法【讲座+PPT】 <a href="https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_611f48f3e4b02ac39d12246f/3?fromH5=true">https://app6ca5octe2206.pc.xiaoe-tech.com/detail/v_611f48f3e4b02ac39d12246f/3?fromH5=true</a>
-[12] 苏剑林-《Attention is All You Need》浅读（简介+代码）<a href="https://spaces.ac.cn/archives/4765">https://spaces.ac.cn/archives/4765</a></p>
+<h1 id="csapp">CSAPP概念整理（一）<a class="headerlink" href="#csapp" title="Permanent link">&para;</a></h1>
+<p>编译系统：预处理器、编译器、汇编器、链接器一起构成了编译系统。</p>
+<p>GNU/Linux：GNU环境+Linux内核</p>
+<p>系统的硬件组成：</p>
+<ul>
+<li>总线：携带字节信息并负责在各个部件间传递。传送定长的字节块，也就是字，字节数即字长是一个基本的系统参数，大多数机器是4个字节（32位）或8个字节（64位）。</li>
+<li>I/O设备：键盘、鼠标、显示器、磁盘。每个I/O设备都通过一个控制器或适配器与I/O总线相连。</li>
+<li>主存（内存）：主存是一个临时存储设备，由一组动态随机存取存储器（DRAM）芯片组成的。存储器是一个线性的字节数组，每个字节都有其唯一的地址（数组索引），组成程序的每条机器指令都由不同数量的字节构成。</li>
+<li>处理器（CPU）：解释或执行存储在主存中的指令。处理器一直在不断地从PC指向的内存处读取指令，执行指令的操作，再更新PC，使其指向下一条指令。</li>
+<li>程序计数器（PC）：PC指向主存中某条机器语言指令（即含有该条指令的地址）。</li>
+<li>算术逻辑单元（ALU）：计算新的数据和地址值。</li>
+<li>寄存器文件（Register File）：负责存储。</li>
+</ul>
+<p>指令集架构（ISA）：处理器按照一个指令执行模型来操作，这个模型由指令集架构决定。指令集架构描述的是每条机器代码指令的效果；而微体系结构描述的是处理器实际上如何实现。</p>
+<p>cache：高速缓存存储器（cache memory）。</p>
+<p>SRAM：静态随机访问存储器。</p>
+<p>存储器层次结构：</p>
+<ul>
+<li>L0：寄存器。CPU寄存器保存来自高速缓存的字。</li>
+<li>L1：L1高速缓存（SRAM）。L1高速缓存保存取自L2高速缓存的高速缓存行。</li>
+<li>L2：L2高速缓存（SRAM）。L2高速缓存保存取自L3高速缓存的高速缓存行。</li>
+<li>L3：L3高速缓存（SRAM）。L3高速缓存保存取自主存的高速缓存行。</li>
+<li>L4：主存（DRAM）。主存保存取自本地磁盘的磁盘块。</li>
+<li>L5：本地二级存储（本地磁盘）。本地磁盘保存取自远程网络服务器上磁盘的文件。</li>
+<li>L6：远程二级存储（分布式文件系统、web服务器）。</li>
+</ul>
+<p>操作系统：应用程序（软件）和硬件之间的一层软件，所有应用程序对硬件的操作都必须通过操作系统。操作系统通过几个抽象的基本概念（进程、虚拟内存、文件）来实现。</p>
+<ul>
+<li>文件是I/O设备的抽象。</li>
+<li>虚拟内存是主存和I/O设备的抽象。</li>
+<li>进程是处理器、主存和I/O设备的抽象。</li>
+</ul>
+<p>进程（Process）：进程是操作系统对一个正在运行的程序的一种抽象。</p>
+<ul>
+<li>并发（Concurrency）：一个进程的指令和另一个进程的指令交错执行。</li>
+<li>上下文切换（Context Switch）：这种交错执行的机制成为上下文切换。当操作系统决定把控制权从当前进程转移到某个新进程时，就会上下文切换，即保持当前进程的上下文，恢复新进程的上下文，将控制权传递给新进程。</li>
+<li>上下文：操作系统保持跟踪进程运行所需的所有状态信息。</li>
+<li>内核：从一个进程到另一个进程的转换是由操作系统内核管理的。内核是操作系统常驻主存的部分。当应用程序需要操作系统的某些操作时，它就执行一条系统调用指令，将控制权传递给内核，然后内核执行请求的操作并返回应用程序。内核不是一个独立的进程，而是系统管理全部进程所用代码和数据结构的集合。</li>
+<li>线程（Thread）：一个进程实际上可以由多个成为线程的执行单元组成，每个线程都运行在进程的上下文中，共享同样的代码和全局数据。</li>
+</ul>
+<p>虚拟内存：为每个进程提供一个假象，即每个进程都在独占使用主存。每个进程看到的内存都是一致的，成为虚拟地址空间。每个进程看到的虚拟地址空间由大量准确定义的区构成，每个区由专门的功能。    </p>
+<p>文件：文件就是字节序列。</p>
+<p>网络：现代系统通过网络与其他系统连接到一起，是计算机系统之间通信的手段。网络可以视为一个I/O设备，系统从网络适配器发送和读取其他机器的数据。</p>
+<p>并发和并行：并发是一个通用概念，指一个同时具有多个活动的系统，并发可以使系统同时做更更多事情（一方面做得更多，一方面运行得更快。）；而并行（parallelism）指的是用并发来使一个系统运行地更快。并行可以在计算机系统的多个抽象层次上运用：</p>
+<ul>
+<li>线程级并发：</li>
+<li>单核处理器：并发是模拟出来的，只是通过进程间的快速切换实现。</li>
+<li>多核处理器：将多个CPU集成在一个集成电路芯片上。</li>
+<li>超线程/同时多线程：常规处理器需要大约20000个时钟周期做线程间切换，而超线程的处理器可以在单个周期的基础上决定线程切换。这必须要求程序是以多线程方式来书写的。</li>
+<li>指令级并行：</li>
+<li>现代处理器可以同时执行多条指令的属性称为指令级并行。</li>
+<li>流水线（pipelining）：在流水线中，将执行一条指令所需要的活动划分成不同的步骤，将处理器的硬件组织成一系列的阶段，每个阶段执行一个步骤，这些阶段可以并行操作，用来处理不同指令的不同部分。</li>
+<li>超标量（superscalar）：如果处理器可以达到比一个周期一条指令更快的执行速率，就称之为超标量处理器。</li>
+<li>单指令 、多数据并行：</li>
+<li>许多现代处理器拥有特殊的硬件，允许一条指令产生多个可以并行执行的操作，称为单指令、多数据，即SIMD并行。</li>
+</ul>
+<p>虚拟机：对整个计算机的抽象，包括操作系统、处理器和程序。</p>
+<p>指令集体系结构（ISA）：指令被编码为由一个或多个字节序列组成的二进制格式。一个处理器支持的指令和指令的字节级编码称为它的指令集体系结构。ISA在编译器编写者和处理器设计人员之间提供了一个概念抽象层，编译器编写者只需要知道允许哪些指令以及它们是如何编码的；而处理器设计者必须建造出执行这些指令的处理器。</p>
+<p>HCL（硬件控制语言）：用来描述处理器的设计。</p>
+<p>流水线化的处理器：将每条指令的执行分成5步，每个步骤由一个独立的硬件或阶段来处理。处理器可以同时执行5条指令的不同阶段。</p>
+<p>冒险或冲突：冒险就是一条指令的位置或操作位数依赖于其他仍在流水线中的指令。</p>
+<p>虚拟地址：引用内存位置，硬件和操作系统联合起来将虚拟地址翻译成实际或物理地址。</p>
+<p>指令的不同的阶段：</p>
+<ul>
+<li>取指（fetch）：取址阶段从内存读取指令字节，地址为程序计数器的值。</li>
+<li>译码（decode）：译码阶段从寄存器文件读入最多两个操作数。</li>
+<li>执行（execute）：算术逻辑单元要么执行指令指明的操作，计算内存引用的有效地址，要么增加或者减少栈指针。</li>
+<li>访存（memory）：访存阶段可以将数据写入内存，或者从内存读出数据。</li>
+<li>写回（write back）：写回阶段最多可以写两个结果到寄存器文件。</li>
+<li>更新PC：将PC设置成下一条指令的地址。</li>
+</ul>
+<p>吞吐量和延迟：流水线的一个重要特性就是提高了系统的吞吐量（throughput），也就是单位时间内执行的指令总数，不过也会轻微增加延迟（latency），也就是执行一个指令所需要的时间。我们以每秒千兆条指令（GIPS），也就是每秒十亿条指令，为单位来描述吞吐量。从头到尾执行一条指令所需要的时间称为延迟（latency）。</p>
+<p>程序剖析（profiling）运行程序的一个版本，其中插入了工具代码，以确定程序的各个部分需要多少时间。剖析的一个有利之处在于可以在现实的基准数据（benchmark data）上运行实际程序的同时，进行剖析。</p>
+<h1 id="csapp_1">CSAPP概念整理（二）<a class="headerlink" href="#csapp_1" title="Permanent link">&para;</a></h1>
+<p>存储器系统（memeory system）：存储器系统是一个具有不同容量、成本和访问时间的存储设备的层次结构。</p>
+<p>局部性（locality）：具有良好局部性的程序倾向于访问相同或是邻近的数据项集合。具有良好局部性的程序比局部性差的程序更多倾向于从存储器层次结构中较高层次处访问数据项，因此运行地更快。</p>
+<ul>
+<li>时间局部性：在一个具有良好时间局部性的程序中，被引用过一次的内存位置很可能在不远的将来再被多次引用。</li>
+<li>空间局部性：在一个具有良好空间局部性的程序中，如果一个内存位置被引用了一次，那么程序很可能在不远的将来引用附近的一个内存位置。</li>
+</ul>
+<p>随机访问存储器（RAM）：</p>
+<ul>
+<li>静态RAM（SRAM）：用来作为高速缓存存储器</li>
+<li>动态RAM（DRAM）：用来作为主存以及图形系统的帧缓冲区</li>
+</ul>
+<p>非易失性存储器（Nonvolatile memory，NVM）：如果断电，SRAM和DRAM会丢失它们的信息，它们是易失的。非易失性存储器关电后仍然保持信息，包括只读存储器（ROM）。</p>
+<ul>
+<li>PROM：只能被编程一次</li>
+<li>EPROM：可编程100次</li>
+<li>EEPROM：可编程<span class="arithmatex"><span class="MathJax_Preview">10^5</span><script type="math/tex">10^5</script></span>次</li>
+<li>闪存：基于EEPROM</li>
+<li>固态硬盘（SSD）：基于闪存的磁盘驱动器</li>
+</ul>
+<p>存储器层次结构的中心思想是：对于每个k，位于k层的更快更小的存储设备作为位于k+1层的更大更慢的存储设备的缓存。第k+1层的存储器被划分成连续的数据对象组块（block），每个块都有一个唯一的地址或名字。数据总是以块大小为传送单元在第k层和k+1层之间来回复制的。</p>
+<p>缓存命中（cache hit）：当程序需要第k+1层的某个数据对象d时，它首先在当前存储在第k层的一个块中查找d。如果d刚好缓存在第k层中，那么就是我们所说的缓存命中。</p>
+<p>链接（linking）：链接是将各种代码和数据片段收集并组合成一个单一文件的过程，这个文件可以被加载到内存并执行。链接可以执行于编译时、加载时、运行时，使得分离编译成为可能。</p>
+<p>控制流（control flow）：程序计数器假设一个值的序列<span class="arithmatex"><span class="MathJax_Preview">a_0, a_1, ..., a_{n-1}</span><script type="math/tex">a_0, a_1, ..., a_{n-1}</script></span>，其中，<span class="arithmatex"><span class="MathJax_Preview">a_k</span><script type="math/tex">a_k</script></span>是某个相应的指令<span class="arithmatex"><span class="MathJax_Preview">I_k</span><script type="math/tex">I_k</script></span>的地址。每次从<span class="arithmatex"><span class="MathJax_Preview">a_k</span><script type="math/tex">a_k</script></span>到<span class="arithmatex"><span class="MathJax_Preview">a_{k+1}</span><script type="math/tex">a_{k+1}</script></span>的过渡称为控制转移。这样的控制转移序列叫做处理器的控制流。</p>
+<p>异常控制流：现代系统通过使控制流发生突变来对系统状态的变化做出反应。状态变化称为事件（event）。</p>
+<p>异常表：当处理器检测到有事件发生时，它就会通过一张叫做异常表的跳转表，进行一个间接过程调用，到一个专门设计用来处理这类事件的操作系统子程序（异常处理程序）。</p>
+<p>进程（Process）：异常是允许操作系统内核提供进程概念的基本构造块。进程提供给应用程序的关键抽象：</p>
+<ul>
+<li>一个独立的逻辑控制流，提供独占处理器的假象</li>
+<li>一个私有的地址空间，提供独占内存系统的假象</li>
+</ul>
+<p>逻辑控制流：程序计数器中的指令序列。进程是轮流使用处理器的，每个进程执行它的流的一部分，然后被抢占（暂时挂起），然后轮到其他进程。</p>
+<p>并发流：一个逻辑流的执行在时间上与另一个重叠，称为并发流，这两个流被称为并发（concurrency）的运行。</p>
+<p>多任务：一个进程和其他进程轮流运行的概念称为多任务（multitasking）。一个进程执行它的控制流的一部分的每一时间段叫时间片（time slice），因此多任务也叫时间分片（time slicing）。</p>
+<p>并行：如果两个流并发地运行在不同的处理器核或者计算机上，那么我们称它们为并行流（parallel flow），它们并行地运行（runnning in parallel）。</p>
+<p>上下文切换（context switch）：操作系统内核使用一种称为上下文切换的较高层形式的异常控制流来实现多任务。内核为每个进程维持一个上下文。</p>
+<p>调度（scheduling）：在进程执行的某些时刻，内核可以决定抢占当前进程，并重新开始一个先前被抢占了的进程。这种决策就叫做调度（scheduling），在内核中由调度器（scheduler）实现。</p>
+<p>虚拟内存（VM）：为了更加有效地管理内存并少出错，现代系统提供了一种对主存的抽象概念，叫做虚拟内存（VM）。</p>
+<p>物理寻址：计算机系统的主存被组织成一个由M个连续的字节大小单元组成的数组，每字节都有一个唯一的物理地址（physical address），CPU访问内存最自然的方式就是物理寻址（phsical addressing）。</p>
+<p>虚拟寻址：CPU通过生成一个虚拟地址（virtual address）来访问主存，这个虚拟地址在被送到内存之前先转换成适当的物理地址。将虚拟地址转换为物理地址称为地址翻译。</p>
+<p>地址空间：地址空间是一个非负数地址的有序集合。</p>
+<p>虚拟页（virtual page，VP）：VM系统通过将虚拟内存分割为称为虚拟页的大小固定的块来处理。</p>
+<p>动态内存分配：动态内存分配维护着一个进程的虚拟内存区域，称为堆（heap）。分配器将堆视为一组不同大小的块来维护。分配器有两种风格：</p>
+<ul>
+<li>显式分配器。要求应用显式地释放任何已分配的块。例如，C语言的malloc。</li>
+<li>隐式分配器。要求分配器检测一个已分配块何时不再程序所使用，那么就释放这个块。隐式分配器也叫垃圾收集器（garbage collector），而自动释放未使用的已分配块的过程叫做垃圾收集（garbage collection）。例如，Java之类的高级语言就依赖垃圾收集来释放已分配块。</li>
+</ul>
+<h1 id="csapp_2">CSAPP概念整理（三）<a class="headerlink" href="#csapp_2" title="Permanent link">&para;</a></h1>
+<p>输入/输出（I/O）：I/O是在主存和外部设备（例如磁盘驱动器、终端和网络）之间复制数据的过程。输入操作是从I/O设备复制数据到主存，而输出操作是从主存复制数据到I/O设备。</p>
+<p>客户端-服务器模型：每个网络应用都是基于客户端-服务器模型的。一个应用是由一个服务器进程和一个或者多个客户端进程组成。</p>
+<p>事务（Transaction）：客户端-服务器模型中的基本操作是事务。一个事务由以下4步组成：</p>
+<ul>
+<li>1）当一个客户端需要服务时，它向服务器发送一个请求，发起一个事务。</li>
+<li>2）服务器收到请求后，解释它，并以适当的方式操作它的资源。</li>
+<li>3）服务器给客户端发送一个响应，并等待下一个请求。</li>
+<li>4）客户端收到响应并处理它。</li>
+</ul>
+<p>网络：对主机而言，网络只是一种I/O设备，是数据源和数据接收方。</p>
+<p><img alt="image-20221114230333541" src="../image/image-20221114230333541.png" /></p>
+<p>协议：解决主机之间的通信问题，通过控制主机和路由器协同工作来实现数据传输。</p>
+<ul>
+<li>命名机制。定义一种一致的主机地址格式。</li>
+<li>传送机制。定义一种把数据位捆扎成包的统一方式。一个包由包头和有效载荷组成。其中包头包括包的大小以及源主机和目的主机的地址，有效载荷包括从源主机发出的数据位。</li>
+</ul>
+<p><img alt="image-20221115001016757" src="../image/image-20221115001016757.png" /></p>
+<p>因特网：</p>
+<ul>
+<li>主机被映射为一组32位的IP地址</li>
+<li>这组IP地址被映射为一组称为因特网域名的标识符</li>
+<li>因特网主机上的进程能够通过连接（connection）和任何其他因特网主机上的进程通信</li>
+</ul>
+<p>端口：</p>
+<p><img alt="image-20221115002611016" src="../image/image-20221115002611016.png" /></p>
+<p>Web服务器：</p>
+<ul>
+<li>Web客户端和服务器之间的交互用的是HTTP</li>
+<li>Web可以用一种叫做HTML的语言来编写</li>
+</ul>
+<p>Web服务器以两种不同的方式向客户端提供内容：</p>
+<ul>
+<li>取一个磁盘文件，并将它的内容返回给客户端。磁盘文件称为静态内容，而返回文件给客户端的过程称为服务静态内容。</li>
+<li>运行一个可执行文件，并将它的输出返回给客户端。运行时可执行文件的输出称为动态内容，而运行程序返回它的输出到客户端的过程称为服务动态内容。</li>
+</ul>
+<p>应用级并发：</p>
+<ul>
+<li>访问慢速I/O设备</li>
+<li>与人交互</li>
+<li>通过推迟工作以降低延迟</li>
+<li>服务多个网络客户端</li>
+<li>在多核机器上进行并行计算</li>
+</ul>
+<p>并发程序：使用应用级并发的应用程序称为并发程序，现代操作系统提供了三种基本的构造并发程序的方法：</p>
+<ul>
+<li>进程</li>
+<li>I/O多路复用</li>
+<li>线程</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2022</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2023</span>
       
     
   </small>
@@ -1412,41 +1152,6 @@ Attention is all "we" need.</p>
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../nlp-transformer-task01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Task01 NLP学习概览" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Task01 NLP学习概览
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../nlp-transformer-task03/" class="md-footer__link md-footer__link--next" aria-label="Next: Task03 学习BERT" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Task03 学习BERT
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
