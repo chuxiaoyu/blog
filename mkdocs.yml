@@ -1,15 +1,15 @@
 site_name: Xiaoyu's Blog
 # repo_url: https://github.com/chuxiaoyu/blog
-copyright: '&copy; 2022 by Xiaoyu Chu'
+copyright: '&copy; 2022-2023 by Xiaoyu Chu'
 
 theme:
   name: material
-  favicon: image/vu-circle.png
-  logo: image/logo.jpg
+  favicon: image/logo.png
+  logo: image/avatar.jpg
   font:
-    text: Source Serif Pro
+    text: Crimson Pro
   palette:
-    primary: black
+    primary: indigo
     # accent: black
   # feature:
   #   tabs: true
@@ -27,40 +27,40 @@ nav:
 - 🏠 Home: index.md
 - 🤖 Machine Learning:
   - 目录: ml-index.md
-  - Deep Learning Specialization: ml-deep-learning.md
   - CS224n自然语言处理:
-    - Lecture07 机器翻译、seq2seq模型、注意力机制: Lecture07.md
-    - Lecture09 自注意力模型、Transformers: Lecture09.md
-    - Lecture10 预训练: Lecture10.md
-    - Lecture11 问答系统: Lecture11.md
+    - Lecture07 机器翻译、seq2seq模型、注意力机制: machine-learning/Lecture07.md
+    - Lecture09 自注意力模型、Transformers: machine-learning/Lecture09.md
+    - Lecture10 预训练: machine-learning/Lecture10.md
+    - Lecture11 问答系统: machine-learning/Lecture11.md
   - 基于transformers的NLP:
-    - Task01 NLP学习概览: nlp-transformer-task01.md
-    - Task02 学习Attentioin和Transformer: nlp-transformer-task02.md
-    - Task03 学习BERT: nlp-transformer-task03.md
-    - Task04 学习GPT: nlp-transformer-task04.md
-    - Task05 编写BERT模型: nlp-transformer-task05.md
-    - Task06 BERT应用、训练和优化: nlp-transformer-task06.md
-    - Task07 使用Transformers解决文本分类任务: nlp-transformer-task07.md
+    - Task01 NLP学习概览: machine-learning/nlp-transformer-task01.md
+    - Task02 学习Attentioin和Transformer: machine-learning/nlp-transformer-task02.md
+    - Task03 学习BERT: machine-learning/nlp-transformer-task03.md
+    - Task04 学习GPT: machine-learning/nlp-transformer-task04.md
+    - Task05 编写BERT模型: machine-learning/nlp-transformer-task05.md
+    - Task06 BERT应用、训练和优化: machine-learning/nlp-transformer-task06.md
+    - Task07 使用Transformers解决文本分类任务: machine-learning/nlp-transformer-task07.md
   - 深入浅出PyTorch:
-    - Chapter01-02 PyTorch的简介和安装、PyTorch基础知识: pytorch-chap01-02.md
-    - Chapter03 PyTorch的主要组成模块: pytorch-chap03.md
-    - Chapter04 PyTorch基础实战——FashionMNIST图像分类: pytorch-chap04.md
-- 💾 Computer Systems:
+    - Chapter01-02 PyTorch的简介和安装、PyTorch基础知识: machine-learning/pytorch-chap01-02.md
+    - Chapter03 PyTorch的主要组成模块: machine-learning/pytorch-chap03.md
+    - Chapter04 PyTorch基础实战——FashionMNIST图像分类: machine-learning/pytorch-chap04.md
+- 💾 Computer System:
   - 目录: sys-index.md
-  - 人工智能的基石：算力、计算和计算设施: computing-and-computing-power.md
   - Nand2Tetris 计算机系统要素:
-    - Nand2Tetris Part1 (Hardware): nand2tetris_part_1.md
-    - Nand2Tetris Part2 (Software): nand2tetris_part_2.md
+    - Nand2Tetris Part1 (Hardware): system/nand2tetris_part_1.md
+    - Nand2Tetris Part2 (Software): system/nand2tetris_part_2.md
   - ML Compilation 机器学习编译:
-    - 01 机器学习编译概述: ml-compilation-01.md
-    - 02 张量程序抽象: ml-compilation-02.md
-    - 03 张量程序抽象案例研究：TensorIR: ml-compilation-03.md
-    - 04 端到端模型整合: ml-compilation-04.md
-    - 05 自动程序优化: ml-compilation-05.md
+    - 01 机器学习编译概述: system/ml-compilation-01.md
+    - 02 张量程序抽象: system/ml-compilation-02.md
+    - 03 张量程序抽象案例研究：TensorIR: system/ml-compilation-03.md
+    - 04 端到端模型整合: system/ml-compilation-04.md
+    - 05 自动程序优化: system/ml-compilation-05.md
+- 📊 Data Science:
+  - Sequences, time series, and prediction: data-science/sequences-time-series-and-prediction.md
 - 📝 Posts:
-  - Types of CS Paper: post-types-of-paper.md
-  - Open Source Projects: open-source-projects.md
-- 🧑‍🚀 About: https://www.chuxiaoyu.cn/
+  - Types of CS Paper: posts/post-types-of-paper.md
+  - Open Source Projects: posts/open-source-projects.md
+- 👩‍💻 About: https://www.chuxiaoyu.cn/
 
 
 

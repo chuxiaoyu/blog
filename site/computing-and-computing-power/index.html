@@ -1,0 +1,1539 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../image/vu-circle.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+    
+    
+      
+        <title>人工智能的基石：算力、计算和计算设施 - Xiaoyu's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7951f6f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font:"Source Serif Pro";--md-code-font:""}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Xiaoyu&#39;s Blog" class="md-header__button md-logo" aria-label="Xiaoyu's Blog" data-md-component="logo">
+      
+  <img src="../image/logo.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xiaoyu's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              人工智能的基石：算力、计算和计算设施
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href=".." class="md-tabs__link">
+      🏠 Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../ml-index/" class="md-tabs__link">
+        🤖 Machine Learning
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../sys-index/" class="md-tabs__link md-tabs__link--active">
+        💾 Computer Systems
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../post-types-of-paper/" class="md-tabs__link">
+        📝 Posts
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://www.chuxiaoyu.cn/" class="md-tabs__link">
+      🧑‍🚀 About
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Xiaoyu&#39;s Blog" class="md-nav__button md-logo" aria-label="Xiaoyu's Blog" data-md-component="logo">
+      
+  <img src="../image/logo.jpg" alt="logo">
+
+    </a>
+    Xiaoyu's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        🏠 Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          🤖 Machine Learning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🤖 Machine Learning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          🤖 Machine Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-index/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-deep-learning.md" class="md-nav__link">
+        Deep Learning Specialization
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          CS224n自然语言处理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CS224n自然语言处理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          CS224n自然语言处理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture07/" class="md-nav__link">
+        Lecture07 机器翻译、seq2seq模型、注意力机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture09/" class="md-nav__link">
+        Lecture09 自注意力模型、Transformers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture10/" class="md-nav__link">
+        Lecture10 预训练
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture11/" class="md-nav__link">
+        Lecture11 问答系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          基于transformers的NLP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基于transformers的NLP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          基于transformers的NLP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task01/" class="md-nav__link">
+        Task01 NLP学习概览
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task02/" class="md-nav__link">
+        Task02 学习Attentioin和Transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task03/" class="md-nav__link">
+        Task03 学习BERT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task04/" class="md-nav__link">
+        Task04 学习GPT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task05/" class="md-nav__link">
+        Task05 编写BERT模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task06/" class="md-nav__link">
+        Task06 BERT应用、训练和优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task07/" class="md-nav__link">
+        Task07 使用Transformers解决文本分类任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          深入浅出PyTorch
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="深入浅出PyTorch" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          深入浅出PyTorch
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap01-02/" class="md-nav__link">
+        Chapter01-02 PyTorch的简介和安装、PyTorch基础知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap03/" class="md-nav__link">
+        Chapter03 PyTorch的主要组成模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap04/" class="md-nav__link">
+        Chapter04 PyTorch基础实战——FashionMNIST图像分类
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          💾 Computer Systems
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="💾 Computer Systems" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          💾 Computer Systems
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sys-index/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          人工智能的基石：算力、计算和计算设施
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        人工智能的基石：算力、计算和计算设施
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 算力
+  </a>
+  
+    <nav class="md-nav" aria-label="2 算力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-cpu" class="md-nav__link">
+    2.1 CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-gpu" class="md-nav__link">
+    2.2 GPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-fpga" class="md-nav__link">
+    2.3 FPGA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-asic" class="md-nav__link">
+    2.4 ASIC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 计算范式
+  </a>
+  
+    <nav class="md-nav" aria-label="3 计算范式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 并行计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 分布式计算
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 分布式计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1 网格计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    3.2.2 云计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    3.2.3 边缘计算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 集群计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 高性能计算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 计算设施
+  </a>
+  
+    <nav class="md-nav" aria-label="4 计算设施">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1 集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2 超算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3 数据中心
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          Nand2Tetris 计算机系统要素
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nand2Tetris 计算机系统要素" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Nand2Tetris 计算机系统要素
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nand2tetris_part_1/" class="md-nav__link">
+        Nand2Tetris Part1 (Hardware)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nand2tetris_part_2/" class="md-nav__link">
+        Nand2Tetris Part2 (Software)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_4" type="checkbox" id="__nav_3_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_4">
+          ML Compilation 机器学习编译
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ML Compilation 机器学习编译" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_4">
+          <span class="md-nav__icon md-icon"></span>
+          ML Compilation 机器学习编译
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-compilation-01/" class="md-nav__link">
+        01 机器学习编译概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-compilation-02/" class="md-nav__link">
+        02 张量程序抽象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-compilation-03/" class="md-nav__link">
+        03 张量程序抽象案例研究：TensorIR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-compilation-04/" class="md-nav__link">
+        04 端到端模型整合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ml-compilation-05/" class="md-nav__link">
+        05 自动程序优化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          📝 Posts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="📝 Posts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          📝 Posts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../post-types-of-paper/" class="md-nav__link">
+        Types of CS Paper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../open-source-projects/" class="md-nav__link">
+        Open Source Projects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.chuxiaoyu.cn/" class="md-nav__link">
+        🧑‍🚀 About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1 定义
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2 算力
+  </a>
+  
+    <nav class="md-nav" aria-label="2 算力">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-cpu" class="md-nav__link">
+    2.1 CPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-gpu" class="md-nav__link">
+    2.2 GPU
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-fpga" class="md-nav__link">
+    2.3 FPGA
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-asic" class="md-nav__link">
+    2.4 ASIC
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3 计算范式
+  </a>
+  
+    <nav class="md-nav" aria-label="3 计算范式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    3.1 并行计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    3.2 分布式计算
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 分布式计算">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321" class="md-nav__link">
+    3.2.1 网格计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322" class="md-nav__link">
+    3.2.2 云计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323" class="md-nav__link">
+    3.2.3 边缘计算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    3.3 集群计算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    3.4 高性能计算
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4 计算设施
+  </a>
+  
+    <nav class="md-nav" aria-label="4 计算设施">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1 集群
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2 超算
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3 数据中心
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="_1">人工智能的基石：算力、计算范式和计算设施<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>支撑人工智能发展的三个要素包括：数据、算法、算力。可以说，数据是机器学习的输入，算法决定机器学什么、怎样学，算力加速学习过程。这里的算力并不只是显卡，为了又好又快又便宜又安全的计算，人们想尽办法从软件硬件各个层面提升计算能力。从算力、计算方式和计算设施三个方面看，相关概念如图。</p>
+<p><img alt="image-20220823144106667" src="../image/image-20220823144106667.png" /></p>
+<h2 id="1">1 定义<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>算力（Computing Power）：算力是通过计算设备对信息或数据进行处理，然后输出目标结果的计算能力。当我们谈论算力时，通常是指算力的基本载体即芯片，如CPU、GPU等。</p>
+<p>计算（Computing）：计算是针对一个问题、设计出解决问题的指令序列，并由计算设备来执行的过程。计算机的出现就是为了解决计算问题。针对不同的计算问题，人们发明了各种计算范式，如并行计算、分布式计算等。</p>
+<p>计算设施（Computing Infrastructure）：计算设施是计算设备的集合，包括硬件（如服务器、集群等）和软件（如操作系统、虚拟机等）。本文中主要指集群、超算和数据中心。</p>
+<p>如果用一个人的学习过程来比喻，那么算力对应学习能力，芯片就是人的大脑；计算范式对应学习方法，使用不同学习方法可以提升学习效果；计算设施就是学校，提供硬件（如教室、图书馆等）和软件（如老师、班级等）。</p>
+<h2 id="2">2 算力<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>芯片是算力的基本载体，由半导体（硅）和集成电路组成。常见的芯片类型有CPU，GPU，FPGA，ASIC，它们的特点如下图所示。</p>
+<table>
+<thead>
+<tr>
+<th>芯片种类</th>
+<th>定制化程度</th>
+<th>可编辑性</th>
+<th>计算能力</th>
+<th>价格</th>
+<th>应用</th>
+<th>主要供应商及其产品</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>通用</td>
+<td>不可编辑</td>
+<td>低</td>
+<td>低</td>
+<td>通用</td>
+<td>Intel (奔腾、酷睿系列)、AMD (锐龙系列)</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td>通用</td>
+<td>不可编辑</td>
+<td>中</td>
+<td>中</td>
+<td>深度学习、游戏、图形设计等</td>
+<td>NVIDIA (Tesla、RTX Titan系列)、AMD（锐龙RX系列）</td>
+</tr>
+<tr>
+<td>FPGA</td>
+<td>半定制</td>
+<td>可以编辑</td>
+<td>高</td>
+<td>高</td>
+<td>各种行业，如网络通信、工业控制、消费电子和数据中心</td>
+<td>AMD (Xilinx)、英特尔(Altera)、Lattice、Microsemi</td>
+</tr>
+<tr>
+<td>ASIC</td>
+<td>全定制</td>
+<td>难以编辑</td>
+<td>高</td>
+<td>低</td>
+<td>定制化需求，如比特币挖矿</td>
+<td>Intel、Infineon 等等[4]</td>
+</tr>
+</tbody>
+</table>
+<h3 id="21-cpu">2.1 CPU<a class="headerlink" href="#21-cpu" title="Permanent link">&para;</a></h3>
+<p>CPU就是笔记本电脑的中央处理器。1971年，Intel公司的工程师发明了世界上第一个商用微处理器，由此开启了计算机和互联网革命，Intel也伴随着互联网的第一个黄金时代起飞。由于芯片的材料主要是硅这种半导体，硅谷也因此得名。Intel创始人摩尔提出著名的摩尔定律：当价格不变时，集成电路上可容纳的元器件的数目，约每隔18-24个月便会增加一倍，性能也将提升一倍。然而，随着芯片组件的规模越来越接近单个原子的规模，摩尔定律已逐渐失效，半导体行业发展逐渐放缓，该行业正采用其他计算方式（如GPU）、先进软件架构和工具，以及新的芯片电路封装方法来提升整体计算性能。</p>
+<h3 id="22-gpu">2.2 GPU<a class="headerlink" href="#22-gpu" title="Permanent link">&para;</a></h3>
+<p>GPU即图形处理器，又称显卡，负责输出显示图形。由于GPU有大量的核心和高速内存，擅长并行计算，因此被用来处理需要大量矩阵运算的深度学习任务。主流显卡的显示芯片主要由NVIDIA（英伟达）和AMD两大厂商制造，通常NVIDIA的显卡称为N卡，AMD的显卡称为A卡。主流深度学习所用的显卡主要是N卡，因为深度学习要用到CUDA加速。CUDA是NVIDIA推出的GPU并行计算框架，只能在自家GPU上运行，并且几乎所有深度学习框架都首选CUDA作为底层加速库。深受广大AI炼丹师喜爱的显卡有GTX1080Ti、GTX3080Ti、Tesla V100、Tesla A100等。</p>
+<h3 id="23-fpga">2.3 FPGA<a class="headerlink" href="#23-fpga" title="Permanent link">&para;</a></h3>
+<p>FPGA是可编程集成电路，FPGA内部的电路旨在实现各种不同的功能，并且可以根据需要重新编程以执行这些功能。FPGA可以在制造后由用户编程用于特定用途。FPGA包含通过可编程互连连接的自适应逻辑模块 (ALM) 和逻辑元件(LE)。这些块创建了逻辑门的物理阵列，可以定制以执行特定的计算任务。目前全球FPGA市场由四大巨头AMD（Xilinx）、英特尔、Lattice、Microsemi垄断，四大厂商的市场占有率达到了96%。FPGA作为产业新动能的强大引擎对“新基建”的核心领域5G、物联网、数据中心等都起到非常重要的作用。</p>
+<h3 id="24-asic">2.4 ASIC<a class="headerlink" href="#24-asic" title="Permanent link">&para;</a></h3>
+<p>ASIC属于专用集成电路，是为特定功能而专门构建和批量生产的。与 FPGA 不同，它们不能重新编程，但ASIC具有体积更小、重量更轻、功耗更低、可靠性提高、性能提高、保密性增强、成本降低等优点。以前，人们都是用PC（x86通用芯片）挖矿，后来越挖难度越大，算力不够。于是，开始使用显卡（GPU）去挖矿。再后来，显卡的能耗太高，挖出来的币值还抵不上电费，就开始采用FPGA和ASIC集群阵列挖矿[1]。 </p>
+<h2 id="3">3 计算范式<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 并行计算<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>并行计算被定义为一种同时使用多个计算机系统的计算类型。在这里，一个问题被分解成子问题，然后进一步分解成指令。每个子问题的这些指令在不同的处理器上同时执行。在下图中，你可以看到并行计算系统是如何由多个处理器组成的，这些处理器相互通信并同时在共享内存上执行多个任务。并行计算的目的是为了节省时间和提供并发性。</p>
+<p><img alt="img" src="../image/Screenshot164-660x299.png" /></p>
+<h3 id="32">3.2 分布式计算<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>分布式计算被定义为一种计算类型，其中多个计算机系统对一个问题进行工作。在这里，所有的计算机系统被连接在一起，问题被分为子问题，每个部分由不同的计算机系统来解决。分布式计算的目标是提高系统的性能和效率，确保容错。在下图中，每个处理器都有自己的本地存储器，所有处理器通过网络相互通信。</p>
+<p><img alt="img" src="../image/Screenshot177-660x381.png" /></p>
+<h4 id="321">3.2.1 网格计算<a class="headerlink" href="#321" title="Permanent link">&para;</a></h4>
+<p>网格计算是由计算机组成的网络，共同执行单台机器可能难以处理的任务。该网络上的所有计算机都在同一个保护伞下工作，被称为虚拟超级计算机。他们工作的任务要么是高计算能力，要么是由大型数据集组成。网格计算中计算机系统之间的所有通信都是在 "数据网格 "上完成的。网格计算的目标是在更短的时间内解决更多的高计算问题，提高生产力。</p>
+<p><img alt="img" src="../image/Screenshot179-660x448.png" /></p>
+<h4 id="322">3.2.2 云计算<a class="headerlink" href="#322" title="Permanent link">&para;</a></h4>
+<p>云被定义为使用别人的服务器来托管、处理或存储数据。云计算被定义为一种计算类型，它是在互联网上以随用随付的方式提供按需计算服务。</p>
+<p><img alt="img" src="../image/Screenshot176.png" /></p>
+<h4 id="323">3.2.3 边缘计算<a class="headerlink" href="#323" title="Permanent link">&para;</a></h4>
+<p>边缘计算被定义为专注于减少客户端和服务器之间长距离通信的计算类型。这是通过在云中运行较少的进程，并将这些进程转移到用户的计算机、物联网设备或边缘设备/服务器上。</p>
+<p><img alt="img" src="../image/Screenshot172-660x411.png" /></p>
+<h3 id="33">3.3 集群计算<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>集群是一组独立的计算机，它们一起工作以执行给定的任务。集群计算被定义为一种计算类型，由两台或更多的独立计算机组成，被称为节点，作为一台机器一起工作执行任务。集群计算的目标是提高系统的性能、可扩展性和简单性。正如下图中看到的，所有的节点，（无论它们是父节点还是子节点），都作为一个单一的实体来执行任务。</p>
+<p><img alt="img" src="../image/Screenshot166-660x332.png" /></p>
+<h3 id="34">3.4 高性能计算<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>高性能计算研究集群架构、并行算法和相关软件基础，通过分布式计算实现单台计算机无法达到的运算速度。高性能计算主要应用领域有： </p>
+<ul>
+<li>
+<p>科学计算类：物理化学、气象环保、生命科学、石油勘探、天文探测等。 </p>
+</li>
+<li>
+<p>工程计算类：计算机辅助工程、计算机辅助制造、电子设计自动化、电磁仿真等。 </p>
+</li>
+<li>
+<p>智能计算类：即人工智能（AI，Artificial Intelligence）计算，包括：机器学习、深度学习、数据分析等。 </p>
+</li>
+</ul>
+<h2 id="4">4 计算设施<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>计算设施（或基础计算设施），就如学校是教育设施、医院是医疗设施、铁路是交通设施一样，强调的是具体的物理形态。因此将计算设施分为集群、超算、数据中心。</p>
+<h3 id="41">4.1 集群<a class="headerlink" href="#41" title="Permanent link">&para;</a></h3>
+<p>集群就是指一组（若干个）相互独立同时可以通过网络彼此互联的计算机，每个集群节点（即集群中的每台计算机）都是运行各自服务的独立服务器，这些服务器合作做同一件事。当用户请求集群系统时，集群给用户的感觉就是一个单一独立的服务器，而实际上用户请求的是一组集群服务器。</p>
+<blockquote>
+<p>分布式与集群的区别是什么？引用一个例子说明[7]：小饭店原来只有一个厨师，切菜洗菜备料炒菜全干。后来客人多了，厨房一个厨师忙不过来，又请了个厨师，两个厨师都能炒一样的菜，这两个厨师的关系是**集群**。为了让厨师专心炒菜，把菜做到极致，又请了个配菜师负责切菜，备菜，备料，厨师和配菜师的关系是**分布式**。</p>
+</blockquote>
+<h3 id="42">4.2 超算<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>超算主要提供国家高科技领域和尖端技术研究需的运算速度和存储容量，包括航天、国防、石油勘探、气候建模和基因组测序等。</p>
+<p><img alt="Top500超算排名" src="../image/image-20220822230454244.png" /></p>
+<h3 id="43">4.3 数据中心<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>数据中心主要面向需要信息技术服务的商业场景（云）。数据中心架构：</p>
+<p><img alt="image-20220822230839837" src="../image/image-20220822230839837.png" /></p>
+<h2 id="_2">参考资料<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>[1] 《关于“算力”，这篇文章值得一看》 <a href="https://36kr.com/p/1848541284191362">https://36kr.com/p/1848541284191362</a></p>
+<p>[2] 邢文娟, 雷波, 赵倩颖. 算力基础设施发展现状与趋势展望[J]. 电信科学, 2022, 38(6): 51-61. <a href="http://www.infocomm-journal.com/dxkx/CN/10.11959/j.issn.1000-0801.2022137">http://www.infocomm-journal.com/dxkx/CN/10.11959/j.issn.1000-0801.2022137</a></p>
+<p>[3] 《科普：并行计算、分布式计算、集群计算和云计算》 <a href="https://max2d.com/archives/976">https://max2d.com/archives/976</a></p>
+<p>[4] 《什么是ASIC？ASIC供应商有哪些？》<a href="https://mp.ofweek.com/ee/a356714038087">https://mp.ofweek.com/ee/a356714038087</a></p>
+<p>[5] Different Computing Paradigms <a href="https://www.geeksforgeeks.org/different-computing-paradigms/">https://www.geeksforgeeks.org/different-computing-paradigms/</a></p>
+<p>[6] 《2022中国人工智能芯片行业研究报告》 <a href="https://pdf.dfcfw.com/pdf/H3_AP202204131558974968_1.pdf?1649846951000.pdf">https://pdf.dfcfw.com/pdf/H3_AP202204131558974968_1.pdf?1649846951000.pdf</a></p>
+<p>[7] 分布式与集群的区别是什么？ - 张鹏飞的回答 - 知乎 <a href="https://www.zhihu.com/question/20004877/answer/112124929">https://www.zhihu.com/question/20004877/answer/112124929</a></p>
+<p>[8] 数据中心定义、分类及产业链 <a href="https://blog.51cto.com/kymdidicom/3140009">https://blog.51cto.com/kymdidicom/3140009</a></p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 11, 2023</span>
+      
+    
+  </small>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../sys-index/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 目录" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              目录
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../nand2tetris_part_1/" class="md-footer__link md-footer__link--next" aria-label="Next: Nand2Tetris Part1 (Hardware)" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Nand2Tetris Part1 (Hardware)
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2022-2023 by Xiaoyu Chu
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.649a939e.min.js"></script>
+      
+        <script src="../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
