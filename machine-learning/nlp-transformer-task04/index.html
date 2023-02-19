@@ -1,0 +1,1419 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../image/logo.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+    
+    
+      
+        <title>Task04 学习GPT - Xiaoyu's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7951f6f.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Crimson+Pro:300,400,400i,700%7C&display=fallback">
+        <style>:root{--md-text-font:"Crimson Pro";--md-code-font:""}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#task04-gpt" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Xiaoyu&#39;s Blog" class="md-header__button md-logo" aria-label="Xiaoyu's Blog" data-md-component="logo">
+      
+  <img src="../../image/avatar.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Xiaoyu's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Task04 学习GPT
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      🏠 Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../ml-index/" class="md-tabs__link md-tabs__link--active">
+        🤖 Machine Learning
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../sys-index/" class="md-tabs__link">
+        💾 Computer System
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../data-science/sequences-time-series-and-prediction/" class="md-tabs__link">
+        📊 Data Science
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../posts/post-types-of-paper/" class="md-tabs__link">
+        📝 Posts
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="https://www.chuxiaoyu.cn/" class="md-tabs__link">
+      👩‍💻 About
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Xiaoyu&#39;s Blog" class="md-nav__button md-logo" aria-label="Xiaoyu's Blog" data-md-component="logo">
+      
+  <img src="../../image/avatar.jpg" alt="logo">
+
+    </a>
+    Xiaoyu's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        🏠 Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          🤖 Machine Learning
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="🤖 Machine Learning" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          🤖 Machine Learning
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ml-index/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          CS224n自然语言处理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="CS224n自然语言处理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          CS224n自然语言处理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture07/" class="md-nav__link">
+        Lecture07 机器翻译、seq2seq模型、注意力机制
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture09/" class="md-nav__link">
+        Lecture09 自注意力模型、Transformers
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture10/" class="md-nav__link">
+        Lecture10 预训练
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lecture11/" class="md-nav__link">
+        Lecture11 问答系统
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          基于transformers的NLP
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="基于transformers的NLP" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          基于transformers的NLP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task01/" class="md-nav__link">
+        Task01 NLP学习概览
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task02/" class="md-nav__link">
+        Task02 学习Attentioin和Transformer
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task03/" class="md-nav__link">
+        Task03 学习BERT
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Task04 学习GPT
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Task04 学习GPT
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    从语言模型说起
+  </a>
+  
+    <nav class="md-nav" aria-label="从语言模型说起">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-encoder" class="md-nav__link">
+    自编码语言模型（auto-encoder）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-regressive" class="md-nav__link">
+    自回归语言模型（auto-regressive）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-bert-gpt-2" class="md-nav__link">
+    Transformer, BERT, GPT-2的关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpt-2" class="md-nav__link">
+    GPT-2概述
+  </a>
+  
+    <nav class="md-nav" aria-label="GPT-2概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    模型的输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoder" class="md-nav__link">
+    Decoder层
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    模型的输出
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-attention-masked-self-attention" class="md-nav__link">
+    关于Self-Attention, Masked Self-Attention
+  </a>
+  
+    <nav class="md-nav" aria-label="关于Self-Attention, Masked Self-Attention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    Self-Attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masked-self-attention" class="md-nav__link">
+    Masked Self-Attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-2self-attention" class="md-nav__link">
+    GPT-2中的Self-Attention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    自回归语言模型的应用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task05/" class="md-nav__link">
+        Task05 编写BERT模型
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task06/" class="md-nav__link">
+        Task06 BERT应用、训练和优化
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nlp-transformer-task07/" class="md-nav__link">
+        Task07 使用Transformers解决文本分类任务
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          深入浅出PyTorch
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="深入浅出PyTorch" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          深入浅出PyTorch
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap01-02/" class="md-nav__link">
+        Chapter01-02 PyTorch的简介和安装、PyTorch基础知识
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap03/" class="md-nav__link">
+        Chapter03 PyTorch的主要组成模块
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pytorch-chap04/" class="md-nav__link">
+        Chapter04 PyTorch基础实战——FashionMNIST图像分类
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          💾 Computer System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="💾 Computer System" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          💾 Computer System
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sys-index/" class="md-nav__link">
+        目录
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          Nand2Tetris 计算机系统要素
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Nand2Tetris 计算机系统要素" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Nand2Tetris 计算机系统要素
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/nand2tetris_part_1/" class="md-nav__link">
+        Nand2Tetris Part1 (Hardware)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/nand2tetris_part_2/" class="md-nav__link">
+        Nand2Tetris Part2 (Software)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          ML Compilation 机器学习编译
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ML Compilation 机器学习编译" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          ML Compilation 机器学习编译
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/ml-compilation-01/" class="md-nav__link">
+        01 机器学习编译概述
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/ml-compilation-02/" class="md-nav__link">
+        02 张量程序抽象
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/ml-compilation-03/" class="md-nav__link">
+        03 张量程序抽象案例研究：TensorIR
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/ml-compilation-04/" class="md-nav__link">
+        04 端到端模型整合
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../system/ml-compilation-05/" class="md-nav__link">
+        05 自动程序优化
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          📊 Data Science
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="📊 Data Science" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          📊 Data Science
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/sequences-time-series-and-prediction/" class="md-nav__link">
+        Sequences, time series, and prediction
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          📝 Posts
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="📝 Posts" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          📝 Posts
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../posts/post-types-of-paper/" class="md-nav__link">
+        Types of CS Paper
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../posts/open-source-projects/" class="md-nav__link">
+        Open Source Projects
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.chuxiaoyu.cn/" class="md-nav__link">
+        👩‍💻 About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    从语言模型说起
+  </a>
+  
+    <nav class="md-nav" aria-label="从语言模型说起">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-encoder" class="md-nav__link">
+    自编码语言模型（auto-encoder）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auto-regressive" class="md-nav__link">
+    自回归语言模型（auto-regressive）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer-bert-gpt-2" class="md-nav__link">
+    Transformer, BERT, GPT-2的关系
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpt-2" class="md-nav__link">
+    GPT-2概述
+  </a>
+  
+    <nav class="md-nav" aria-label="GPT-2概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    模型的输入
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#decoder" class="md-nav__link">
+    Decoder层
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    模型的输出
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-attention-masked-self-attention" class="md-nav__link">
+    关于Self-Attention, Masked Self-Attention
+  </a>
+  
+    <nav class="md-nav" aria-label="关于Self-Attention, Masked Self-Attention">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-attention" class="md-nav__link">
+    Self-Attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#masked-self-attention" class="md-nav__link">
+    Masked Self-Attention
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gpt-2self-attention" class="md-nav__link">
+    GPT-2中的Self-Attention
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    自回归语言模型的应用
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    参考资料
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="task04-gpt">Task04 学习GPT<a class="headerlink" href="#task04-gpt" title="Permanent link">&para;</a></h1>
+<h2 id="_1">从语言模型说起<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="auto-encoder">自编码语言模型（auto-encoder）<a class="headerlink" href="#auto-encoder" title="Permanent link">&para;</a></h3>
+<p>自编码语言模型通过随机Mask输入的部分单词，然后预训练的目标是预测被Mask的单词，不仅可以融入上文信息，还可以自然的融入下文信息。ex. BERT.
+- 优点：自然地融入双向语言模型，同时看到被预测单词的上文和下文
+- 缺点：训练和预测不一致。训练的时候输入引入了[Mask]标记，但是在预测阶段往往没有这个[Mask]标记，导致预训练阶段和Fine-tuning阶段不一致。</p>
+<h3 id="auto-regressive">自回归语言模型（auto-regressive）<a class="headerlink" href="#auto-regressive" title="Permanent link">&para;</a></h3>
+<p>语言模型根据输入句子的一部分文本来预测下一个词。ex. GPT-2
+- 优点：对于生成类的NLP任务，比如文本摘要，机器翻译等，从左向右的生成内容，天然和自回归语言模型契合。
+- 缺点：由于一般是从左到右（当然也可能从右到左），所以只能利用上文或者下文的信息，不能同时利用上文和下文的信息。</p>
+<h2 id="transformer-bert-gpt-2">Transformer, BERT, GPT-2的关系<a class="headerlink" href="#transformer-bert-gpt-2" title="Permanent link">&para;</a></h2>
+<p>Transformer的Encoder进化成了BERT，Decoder进化成了GPT2。</p>
+<p>如果要使用Transformer来解决语言模型任务，并不需要完整的Encoder部分和Decoder部分，于是在原始Transformer之后的许多研究工作中，人们尝试只使用Transformer Encoder或者Decoder进行预训练。比如BERT只使用了Encoder部分进行masked language model（自编码）训练，GPT-2便是只使用了Decoder部分进行自回归（auto regressive）语言模型训练。</p>
+<h2 id="gpt-2">GPT-2概述<a class="headerlink" href="#gpt-2" title="Permanent link">&para;</a></h2>
+<h3 id="_2">模型的输入<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>输入的处理分为两步：token embedding + position encoding。即:
+1. 在嵌入矩阵中查找输入的单词的对应的embedding向量
+2. 融入位置编码</p>
+<h3 id="decoder">Decoder层<a class="headerlink" href="#decoder" title="Permanent link">&para;</a></h3>
+<p>每一层decoder的组成：Masked Self-Attention + Feed Forward Neural Network</p>
+<p>Self-Attention所做的事情是：它通过对句子片段中每个词的相关性打分，并将这些词的表示向量根据相关性加权求和，从而让模型能够将词和其他相关词向量的信息融合起来。</p>
+<p>Masked Self-Attention做的是：将mask位置对应的的attention score变成一个非常小的数字或者0，让其他单词再self attention的时候（加权求和的时候）不考虑这些单词。</p>
+<h3 id="_3">模型的输出<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>当模型顶部的Decoder层产生输出向量时，模型会将这个向量乘以一个巨大的嵌入矩阵（vocab size x embedding size）来计算该向量和所有单词embedding向量的相关得分。这个相乘的结果，被解释为模型词汇表中每个词的分数，经过softmax之后被转换成概率。</p>
+<p>我们可以选择最高分数的 token（top_k=1），也可以同时考虑其他词（top k）。假设每个位置输出k个token，假设总共输出n个token，那么基于n个单词的联合概率选择的输出序列会更好。</p>
+<p>模型完成一次迭代，输出一个单词。模型会继续迭代，直到所有的单词都已经生成，或者直到输出了表示句子末尾的token。</p>
+<h2 id="self-attention-masked-self-attention">关于Self-Attention, Masked Self-Attention<a class="headerlink" href="#self-attention-masked-self-attention" title="Permanent link">&para;</a></h2>
+<h3 id="self-attention">Self-Attention<a class="headerlink" href="#self-attention" title="Permanent link">&para;</a></h3>
+<p>Self-Attention 主要通过 3 个步骤来实现：</p>
+<ol>
+<li>为每个路径创建 Query、Key、Value 矩阵。</li>
+<li>对于每个输入的token，使用它的Query向量为所有其他的Key向量进行打分。</li>
+<li>将 Value 向量乘以它们对应的分数后求和。</li>
+</ol>
+<h3 id="masked-self-attention">Masked Self-Attention<a class="headerlink" href="#masked-self-attention" title="Permanent link">&para;</a></h3>
+<p>在Self-Attention的第2步，把未来的 token 评分设置为0，因此模型不能看到未来的词。</p>
+<p>这个屏蔽（masking）经常用一个矩阵来实现，称为 attention mask矩阵。
+<img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/mask_1.jpg?raw=true" width="600" alt="" align="center" />
+<img src="https://github.com/chuxiaoyu/blog_image/blob/master/nlp/mask_2.jpg?raw=true" width="600" alt="" align="center" /></p>
+<h3 id="gpt-2self-attention">GPT-2中的Self-Attention<a class="headerlink" href="#gpt-2self-attention" title="Permanent link">&para;</a></h3>
+<p>(skip)</p>
+<h2 id="_4">自回归语言模型的应用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>应用在下游并取得不错效果的NLP任务有：机器翻译、摘要生成、音乐生成。<em>（可见，主要是跟预训练任务相似的生成类任务。）</em></p>
+<h2 id="_5">参考资料<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>基于transformers的自然语言处理(NLP)入门--在线阅读 <a href="https://datawhalechina.github.io/learn-nlp-with-transformers/#/">https://datawhalechina.github.io/learn-nlp-with-transformers/#/</a></li>
+</ul>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 19, 2023</span>
+      
+    
+  </small>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../nlp-transformer-task03/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Task03 学习BERT" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Task03 学习BERT
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../nlp-transformer-task05/" class="md-footer__link md-footer__link--next" aria-label="Next: Task05 编写BERT模型" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Task05 编写BERT模型
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2022-2023 by Xiaoyu Chu
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.649a939e.min.js"></script>
+      
+        <script src="../../js/extra.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+  </body>
+</html>
