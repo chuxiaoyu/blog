@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="generator" content="mkdocs-1.4.3, mkdocs-terminal-4.4.0">
+     
+     
+    <link rel="icon" type="image/png" sizes="192x192" href="../../../img/android-chrome-192x192.png" />
+<link rel="icon" type="image/png" sizes="512x512" href="../../../img/android-chrome-512x512.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="../../../img/apple-touch-icon.png" />
+<link rel="shortcut icon" type="image/png" sizes="48x48" href="../../../img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="16x16" href="../../../img/favicon-16x16.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="../../../img/favicon-32x32.png" />
+
+
+    
+ 
+<title>Lecture10 预训练 - 我那些残梦灵异九霄</title>
+
+
+<link href="../../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
+<link href="../../../css/fontawesome/css/solid.min.css" rel="stylesheet">
+<link href="../../../css/normalize.css" rel="stylesheet">
+<link href="../../../css/terminal.css" rel="stylesheet">
+<link href="../../../css/theme.css" rel="stylesheet">
+<link href="../../../css/theme.tile_grid.css" rel="stylesheet">
+<link href="../../../css/theme.footer.css" rel="stylesheet">
+<!-- default color palette -->
+<link href="../../../css/palettes/default.css" rel="stylesheet">
+
+<!-- page layout -->
+<style>
+/* initially set page layout to a one column grid */
+.terminal-mkdocs-main-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+/*  
+*   when side navigation is not hidden, use a two column grid.  
+*   if the screen is too narrow, fall back to the initial one column grid layout.
+*   in this case the main content will be placed under the navigation panel. 
+*/
+@media only screen and (min-width: 70em) {
+    .terminal-mkdocs-main-grid {
+        grid-template-columns: 4fr 9fr;
+    }
+}</style>
+
+<!-- link underline override -->
+<style>
+#terminal-mkdocs-main-content a:not(.headerlink){
+    text-decoration: none;
+}
+</style>
+
+     
+    
+    
+
+    
+    <!-- search css support -->
+<link href="../../../css/search/bootstrap-modal.css" rel="stylesheet">
+<!-- search scripts -->
+<script>
+    var base_url = "../../..",
+    shortcuts = "{}";
+</script>
+<script src="../../../js/jquery/jquery-1.10.1.min.js" defer></script>
+<script src="../../../js/bootstrap/bootstrap.min.js" defer></script>
+<script src="../../../js/mkdocs/base.js" defer></script>
+    
+    
+    
+    
+    <script src="../../../js/extra.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+    <script src="../../../search/main.js"></script>
+    
+
+    
+</head>
+
+<body class="terminal"><div class="container">
+    <div class="terminal-nav">
+        <header class="terminal-logo">
+            <div id="mkdocs-terminal-site-name" class="logo terminal-prompt"><a href="/" class="no-style">我那些残梦灵异九霄</a></div>
+        </header>
+        
+        <nav class="terminal-menu">
+            
+            <ul vocab="https://schema.org/" typeof="BreadcrumbList">
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="../../.." class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">Home</span>
+                    </a>
+                    <meta property="position" content="0">
+                </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                <li property="itemListElement" typeof="ListItem">
+                    <a href="https://chuxiaoyu.github.io/" class="menu-item " property="item" typeof="WebPage">
+                        <span property="name">About</span>
+                    </a>
+                    <meta property="position" content="1">
+                </li>
+                
+                    
+                    
+
+
+<li property="itemListElement" typeof="ListItem">
+    <a href="#" class="menu-item" data-toggle="modal" data-target="#mkdocs_search_modal" property="item" typeof="SearchAction">
+        <i aria-hidden="true" class="fa fa-search"></i> <span property="name">Search</span>
+    </a>
+    <meta property="position" content="2">
+</li>
+                    
+            </ul>
+            
+        </nav>
+    </div>
+</div>
+        
+    <div class="container">
+        <div class="terminal-mkdocs-main-grid"><aside id="terminal-mkdocs-side-panel"><nav>
+  
+    <ul class="terminal-mkdocs-side-nav-items">
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../..">Home</a>
+        
+    
+    
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item--active terminal-mkdocs-side-nav-section-no-index">CS224n自然语言处理</span>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../Lecture07/">Lecture07 机器翻译、seq2seq模型、注意力机制</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../Lecture09/">Lecture09 自注意力模型、Transformers</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">Lecture10 预训练</span>
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../Lecture11/">Lecture11 问答系统</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">基于transformers的NLP</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../nlp-transformer-task01/">Task01 NLP学习概览</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../nlp-transformer-task02/">Task02 学习Attentioin和Transformer</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../nlp-transformer-task03/">Task03 学习BERT</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../nlp-transformer-task04/">Task04 学习GPT</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../nlp-transformer-task05/">Task05 编写BERT模型</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../nlp-transformer-task06/">Task06 BERT应用、训练和优化</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../nlp-transformer-task07/">Task07 使用Transformers解决文本分类任务</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">深入浅出PyTorch</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../pytorch-chap01-02/">Chapter01-02 PyTorch的简介和安装、PyTorch基础知识</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../pytorch-chap03/">Chapter03 PyTorch的主要组成模块</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../pytorch-chap04/">Chapter04 PyTorch基础实战——FashionMNIST图像分类</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Nand2Tetris 计算机系统要素</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../system/nand2tetris_part_1/">Nand2Tetris Part1 (Hardware)</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../system/nand2tetris_part_2/">Nand2Tetris Part2 (Software)</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">ML Compilation 机器学习编译</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../system/ml-compilation-01/">01 机器学习编译概述</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../system/ml-compilation-02/">02 张量程序抽象</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../system/ml-compilation-03/">03 张量程序抽象案例研究：TensorIR</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../system/ml-compilation-04/">04 端到端模型整合</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../system/ml-compilation-05/">05 自动程序优化</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Posts</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../../posts/open-source-projects/">Open Source Projects</a>
+        
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../../posts/post-types-of-paper/">Types of CS Paper</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="https://chuxiaoyu.github.io/">About</a>
+        
+    
+    
+    
+  </li>
+        
+    </ul>
+  
+</nav><hr>
+<nav>
+    <ul>
+        <li><a href="#lecture10">Lecture10: 预训练</a></li>
+        <li><a href="#_1">本节主要内容</a></li>
+        <li><a href="#1">1 子词模型回顾</a></li>
+        <li><a href="#11">1.1 独热编码</a></li>
+        <li><a href="#12">1.2 字节对编码算法</a></li>
+        <li><a href="#2">2 从词向量中获得模型预训练的启发</a></li>
+        <li><a href="#21">2.1 预训练词向量</a></li>
+        <li><a href="#22">2.2 预训练模型整体</a></li>
+        <li><a href="#23">2.3 预训练/微调范式</a></li>
+        <li><a href="#24">2.4 随机梯度下降和预训练/微调</a></li>
+        <li><a href="#3">3 三种预训练方法</a></li>
+        <li><a href="#31">3.1 解码器</a></li>
+        <li><a href="#32">3.2 编码器</a></li>
+        <li><a href="#33-">3.3 编码器-解码器</a></li>
+        
+    </ul>
+</nav>
+</aside>
+            <main id="terminal-mkdocs-main-content">
+    
+    
+    
+    
+    
+
+<section id="mkdocs-terminal-content">
+    <h6 id="lecture10">Lecture10: 预训练<a class="headerlink" href="#lecture10" title="Permanent link">&para;</a></h6>
+<h6 id="_1">本节主要内容<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h6>
+<ul>
+<li>子词模型回顾</li>
+<li>预训练的3种方法</li>
+</ul>
+<h6 id="1">1 子词模型回顾<a class="headerlink" href="#1" title="Permanent link">&para;</a></h6>
+<h6 id="11">1.1 独热编码<a class="headerlink" href="#11" title="Permanent link">&para;</a></h6>
+<p>假设我们有一个固定的词表，那么：</p>
+<p><img alt="image-20220118140241676" src="../image/image-20220118140241676.png" /></p>
+<p>这种词表示方法的效果不是很好，因为单词有非常多的形态。</p>
+<h6 id="12">1.2 字节对编码算法<a class="headerlink" href="#12" title="Permanent link">&para;</a></h6>
+<p>一种解决思路是字节对编码（byte-pair encoding algorithm），它把单词分解成一系列的子词（subwords）组成的序列，这样稀有词就可以被表示。</p>
+<p><img alt="image-20220118141749727" src="../image/image-20220118141749727.png" /></p>
+<h6 id="2">2 从词向量中获得模型预训练的启发<a class="headerlink" href="#2" title="Permanent link">&para;</a></h6>
+<h6 id="21">2.1 预训练词向量<a class="headerlink" href="#21" title="Permanent link">&para;</a></h6>
+<p>大约2017开始，开始预训练词向量（没有背景信息）：</p>
+<p><img alt="image-20220118145335535" src="../image/image-20220118145335535.png" /></p>
+<h6 id="22">2.2 预训练模型整体<a class="headerlink" href="#22" title="Permanent link">&para;</a></h6>
+<p>在现在的NLP中，所有参数都通过预训练进行初始化。</p>
+<p><img alt="image-20220118145534423" src="../image/image-20220118145534423.png" /></p>
+<h6 id="23">2.3 预训练/微调范式<a class="headerlink" href="#23" title="Permanent link">&para;</a></h6>
+<p>预训练通过模型初始化来提升NLP任务的应用效果。</p>
+<p><img alt="image-20220119150524579" src="../image/image-20220119150524579.png" /></p>
+<h6 id="24">2.4 随机梯度下降和预训练/微调<a class="headerlink" href="#24" title="Permanent link">&para;</a></h6>
+<p>从神经网络的训练角度看，为什么预训练/微调是有效的？</p>
+<p>假设参数<span class="arithmatex"><span class="MathJax_Preview">\hat{𝜃}</span><script type="math/tex">\hat{𝜃}</script></span>可以最小化预训练阶段的损失函数<span class="arithmatex"><span class="MathJax_Preview">min_𝜃ℒ_{pretrain}(𝜃)</span><script type="math/tex">min_𝜃ℒ_{pretrain}(𝜃)</script></span>，那么微调阶段的损失函数<span class="arithmatex"><span class="MathJax_Preview">min_𝜃ℒ_{fineturn}(𝜃)</span><script type="math/tex">min_𝜃ℒ_{fineturn}(𝜃)</script></span>从<span class="arithmatex"><span class="MathJax_Preview">\hat{𝜃}</span><script type="math/tex">\hat{𝜃}</script></span>开始进行初始化。</p>
+<p><img alt="image-20220119154506465" src="../image/image-20220119154506465.png" /></p>
+<blockquote>
+<p><em>这两句话不是很理解</em>。</p>
+</blockquote>
+<h6 id="3">3 三种预训练方法<a class="headerlink" href="#3" title="Permanent link">&para;</a></h6>
+<p><img alt="image-20220119155115393" src="../image/image-20220119155115393.png" /></p>
+<h6 id="31">3.1 解码器<a class="headerlink" href="#31" title="Permanent link">&para;</a></h6>
+<p><img alt="image-20220119163446436" src="../image/image-20220119163446436.png" /></p>
+<h6 id="32">3.2 编码器<a class="headerlink" href="#32" title="Permanent link">&para;</a></h6>
+<p><img alt="image-20220119165427657" src="../image/image-20220119165427657.png" /></p>
+<h6 id="33-">3.3 编码器-解码器<a class="headerlink" href="#33-" title="Permanent link">&para;</a></h6>
+<p><img alt="image-20220119171056241" src="../image/image-20220119171056241.png" /></p>
+</section>
+
+<section id="mkdocs-terminal-after-content">
+    
+</section>
+<section id="mkdocs-terminal-revision">
+<br>
+<aside>
+    <p>
+        <small>
+            <i>Page last updated 2023-07-10. </i>
+        </small>
+    </p>
+</aside>
+</section>
+            </main>
+        </div>
+        <hr><footer>
+    <div class="terminal-mkdocs-footer-grid">
+        <div id="terminal-mkdocs-footer-copyright-info">
+            
+            <p class="text-center text-muted">&copy; 2022-2023 by <a href='https://chuxiaoyu.github.io/' target='_blank'> Xiaoyu Chu </a></p>
+             Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+        <div id="terminal-mkdocs-footer-prev-next">
+            <nav class="btn-group">
+                <a href="../Lecture09/" title="Lecture09 自注意力模型、Transformers">Previous</a>
+                |
+                <a href="../Lecture11/" title="Lecture11 问答系统">Next</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+    </div>
+
+    
+    <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="alertdialog" aria-modal="true" aria-labelledby="searchModalLabel">
+    <div class="modal-dialog modal-lg" role="search">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="close btn btn-default btn-ghost" data-dismiss="modal"><span aria-hidden="true">x</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p id="searchInputLabel">Type to start searching</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" aria-labelledby="searchInputLabel" placeholder="" id="mkdocs-search-query" title="Please enter search terms here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No document matches found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</body>
+
+</html>

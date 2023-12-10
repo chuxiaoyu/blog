@@ -1,10 +1,8 @@
-# Welcome to My Blog
-
-<a href='https://clustrmaps.com/site/1boev'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=300&t=tt&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc&co=2d78ad&ct=ffffff'/></a>
+# Hello
 
 
-
-HELLO<<
+<div style="display:none;"> 
+<a href='https://clustrmaps.com/site/1boev'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=600&t=tt&d=VdKD5xBKdzCyh4frXOxQKpE5rFZXuZ9Kot9yZaYenAc&co=2d78ad&ct=ffffff'/></a>
 
 <script src="https://giscus.app/client.js"
         data-repo="chuxiaoyu/blog"
@@ -21,3 +19,4 @@ HELLO<<
         crossorigin="anonymous"
         async>
 </script>
+</div>
