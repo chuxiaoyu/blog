@@ -18,7 +18,7 @@
 
     
  
-<title>Data preparation - 起 身 獨 立 向 荒 原 。</title>
+<title>Transforming Time Series to Supervised Learning - 起 身 獨 立 向 荒 原 。</title>
 
 
 <link href="../../css/fontawesome/css/fontawesome.min.css" rel="stylesheet">
@@ -120,6 +120,8 @@
                 
                 
                 
+                
+                
                     
                     
 
@@ -178,17 +180,13 @@
             
     
         
-        
-            
-            
-            <span class="
+        <span class="
         
             
         
     
 
-    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Deep Learning for Time Series Forecasting</span>
-        
+    terminal-mkdocs-side-nav-item--active terminal-mkdocs-side-nav-section-no-index">Deep Learning for Time Series Forecasting</span>
     
     
         
@@ -211,6 +209,23 @@
 
     terminal-mkdocs-side-nav-item" href="../01-time-series-types/">Taxonomy of Time Series Forecasting</a>
         
+    
+    </li>
+            
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">Transforming Time Series to Supervised Learning</span>
     
     </li>
             
@@ -916,20 +931,78 @@
     
   </li>
         
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        
+            
+            
+            <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item terminal-mkdocs-side-nav-section-no-index">Philosophy</span>
+        
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        
+            <a class="
+
+    terminal-mkdocs-side-nav-item" href="../../philosophy/40-philosophers/">A Quick Introduction to 40+ Philosophers</a>
+        
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
     </ul>
   
 </nav><hr>
 <nav>
     <ul>
-        <li><a href="#data-preparation">Data Preparation</a></li>
+        <li><a href="#transforming-time-series-to-supervised-learning">Transforming Time Series to Supervised Learning</a></li>
         <li><a href="#1-univariate">1 Univariate</a></li>
         <li><a href="#11-one-step">1.1 One-step</a></li>
         <li><a href="#12-multi-step">1.2 Multi-step</a></li>
+        <li><a href="#13-transform-univariate-time-series-to-supervised-learning-problem">1.3 Transform univariate time series to supervised learning problem</a></li>
         <li><a href="#2-multivariate">2 Multivariate</a></li>
         <li><a href="#21-multi-input">2.1 Multi-input</a></li>
-        <li><a href="#22-multi-output">2.2 Multi-output</a></li>
-        <li><a href="#23-multi-input-multi-output">2.3 Multi-input Multi-output</a></li>
-        <li><a href="#24-multivariate-multi-step">2.4 Multivariate Multi-step</a></li>
+        <li><a href="#22-multi-input-multi-output">2.2 Multi-input Multi-output</a></li>
         
     </ul>
 </nav>
@@ -942,15 +1015,103 @@
     
 
 <section id="mkdocs-terminal-content">
-    <h6 id="data-preparation">Data Preparation<a class="headerlink" href="#data-preparation" title="Permanent link">&para;</a></h6>
+    <h6 id="transforming-time-series-to-supervised-learning">Transforming Time Series to Supervised Learning<a class="headerlink" href="#transforming-time-series-to-supervised-learning" title="Permanent link">&para;</a></h6>
 <h6 id="1-univariate">1 Univariate<a class="headerlink" href="#1-univariate" title="Permanent link">&para;</a></h6>
 <h6 id="11-one-step">1.1 One-step<a class="headerlink" href="#11-one-step" title="Permanent link">&para;</a></h6>
+<p>time series dataset:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>time, measure 
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>1, 100 
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>2, 110 
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>3, 108 
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>4, 115 
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>5, 120
+</span></code></pre></div>
+time series dataset as supervised learning:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>X, y 
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>?, 100 
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>100, 110 
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>110, 108 
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>108, 115 
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>115, 120 
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>120, ?
+</span></code></pre></div></p>
 <h6 id="12-multi-step">1.2 Multi-step<a class="headerlink" href="#12-multi-step" title="Permanent link">&para;</a></h6>
+<p>time series dataset as supervised learning (two steps prediction):
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>X1, y1, y2 
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>? 100, 110 
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>100, 110, 108 
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>110, 108, 115 
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>108, 115, 120 
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>115, 120, ? 
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>120, ?, ?
+</span></code></pre></div></p>
+<h6 id="13-transform-univariate-time-series-to-supervised-learning-problem">1.3 Transform univariate time series to supervised learning problem<a class="headerlink" href="#13-transform-univariate-time-series-to-supervised-learning-problem" title="Permanent link">&para;</a></h6>
+<p><div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a># transform univariate time series to supervised learning problem
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>from numpy import array 
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a># split a univariate sequence into samples 
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>def split_sequence(sequence, n_steps): 
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    X, y = list(), list() 
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    for i in range(len(sequence)): 
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        # find the end of this pattern 
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        end_ix = i + n_steps 
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        # check if we are beyond the sequence 
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        if end_ix &gt; len(sequence)-1: 
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>            break 
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        # gather input and output parts of the pattern 
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        seq_x, seq_y = sequence[i:end_ix], sequence[end_ix] 
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        X.append(seq_x) 
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>        y.append(seq_y)
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>    return array(X), array(y)
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a># transform input from [samples, features] to [samples, timesteps, features] 
+</span><span id="__span-3-20"><a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>X = X.reshape((X.shape[0], X.shape[1], 1))
+</span></code></pre></div>
+The input to every CNN and LSTM layer must be three-dimensional. The three dimensions of this input are: </p>
+<ul>
+<li>
+<p>Samples. One sequence is one sample. A batch is comprised of one or more samples.  </p>
+</li>
+<li>
+<p>Time Steps. One time step is one point of observation in the sample. One sample is comprised of multiple time steps. </p>
+</li>
+<li>
+<p>Features. One feature is one observation at a time step. One time step is comprised of one or more features.</p>
+</li>
+</ul>
 <h6 id="2-multivariate">2 Multivariate<a class="headerlink" href="#2-multivariate" title="Permanent link">&para;</a></h6>
 <h6 id="21-multi-input">2.1 Multi-input<a class="headerlink" href="#21-multi-input" title="Permanent link">&para;</a></h6>
-<h6 id="22-multi-output">2.2 Multi-output<a class="headerlink" href="#22-multi-output" title="Permanent link">&para;</a></h6>
-<h6 id="23-multi-input-multi-output">2.3 Multi-input Multi-output<a class="headerlink" href="#23-multi-input-multi-output" title="Permanent link">&para;</a></h6>
-<h6 id="24-multivariate-multi-step">2.4 Multivariate Multi-step<a class="headerlink" href="#24-multivariate-multi-step" title="Permanent link">&para;</a></h6>
+<p>time series dataset:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>time, measure1, measure2 
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>1, 0.2, 88 
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>2, 0.5, 89 
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>3, 0.7, 87 
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>4, 0.4, 88 
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>5, 1.0, 90
+</span></code></pre></div>
+time series dataset as supervised learning:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>X1, X2, X3, y 
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>?, ?, 0.2, 88 
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>0.2, 88, 0.5, 89 
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>0.5, 89, 0.7, 87 
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>0.7, 87, 0.4, 88 
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>0.4, 88, 1.0, 90 
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>1.0, 90, ?, ?
+</span></code></pre></div></p>
+<h6 id="22-multi-input-multi-output">2.2 Multi-input Multi-output<a class="headerlink" href="#22-multi-input-multi-output" title="Permanent link">&para;</a></h6>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>X1, X2, y1, y2 
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>?, ?, 0.2, 88 
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>0.2, 88, 0.5, 89 
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>0.5, 89, 0.7, 87 
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>0.7, 87, 0.4, 88 
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>0.4, 88, 1.0, 90 
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>1.0, 90, ?, ?
+</span></code></pre></div>
+<!--
+#### 2.3 Multivariate Multi-step
+
+#### 2.4 Transform multivariate time series to supervised learning problem
+-->
 </section>
 
 <section id="mkdocs-terminal-after-content">
@@ -961,7 +1122,7 @@
 <aside>
     <p>
         <small>
-            <i>Page last updated 2023-12-10. </i>
+            <i>Page last updated 2023-12-17. </i>
         </small>
     </p>
 </aside>
@@ -974,6 +1135,13 @@
             
             <p class="text-center text-muted">&copy; 2022-2023 by <a href='https://chuxiaoyu.github.io/' target='_blank'> Xiaoyu Chu </a></p>
              Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+        <div id="terminal-mkdocs-footer-prev-next">
+            <nav class="btn-group">
+                <a href="../01-time-series-types/" title="Taxonomy of Time Series Forecasting">Previous</a>
+                |
+                <a href="../../ml/Lecture07/" title="Lecture07 机器翻译、seq2seq模型、注意力机制">Next</a>
+            </nav>
         </div>
     </div>
 </footer>
