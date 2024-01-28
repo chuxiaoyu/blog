@@ -122,6 +122,8 @@
                 
                 
                 
+                
+                
                     
                     
 
@@ -251,6 +253,59 @@
 
     terminal-mkdocs-side-nav-item" href="../../time-series/03-mlp-time-series-forecasting/">3.MLP for Time Series Forecasting</a>
         
+    
+    </li>
+            
+            
+    </ul>
+        
+    
+  </li>
+        
+          
+
+
+
+<li class="terminal-mkdocs-side-nav-li">
+    
+    
+        
+        
+            
+                
+        
+
+        
+            
+    
+        
+        <span class="
+        
+            
+        
+    
+
+    terminal-mkdocs-side-nav-item--active terminal-mkdocs-side-nav-section-no-index">Python</span>
+    
+    
+        
+      
+        
+            <ul class="terminal-mkdocs-side-nav-li-ul">
+        
+            
+            
+                
+                
+            
+
+             
+                <li class="terminal-mkdocs-side-nav-li-ul-li">
+    
+        
+        <span class="
+
+    terminal-mkdocs-side-nav-item--active">Ontology with Python</span>
     
     </li>
             
@@ -1021,6 +1076,10 @@
 <nav>
     <ul>
         <li><a href="#ontology-with-python">Ontology with Python</a></li>
+        <li><a href="#ontology">Ontology</a></li>
+        <li><a href="#owl">OWL</a></li>
+        <li><a href="#owlready">Owlready</a></li>
+        <li><a href="#protege">Protege</a></li>
         
     </ul>
 </nav>
@@ -1034,6 +1093,38 @@
 
 <section id="mkdocs-terminal-content">
     <h6 id="ontology-with-python">Ontology with Python<a class="headerlink" href="#ontology-with-python" title="Permanent link">&para;</a></h6>
+<h6 id="ontology">Ontology<a class="headerlink" href="#ontology" title="Permanent link">&para;</a></h6>
+<p>The concept of ontology comes from the philosophy and works of Plato. In computer science, an ontology is “a formal description of all the entities of a domain and the relations existing between these entities”.</p>
+<p>An ontology therefore aims to structure and formalize objects in a domain, as independent as possible of the intended application: the ontology can thus be reused for other applications in the same domain.</p>
+<h6 id="owl">OWL<a class="headerlink" href="#owl" title="Permanent link">&para;</a></h6>
+<p>Ontologies rely on description logics. The OWL language (Web Ontology Language) is one of the most used to formalize ontologies. The OWL language can be translated into RDF (Resource Description Framework), itself usually expressed in XML (Extensible Markup Language).</p>
+<h6 id="owlready">Owlready<a class="headerlink" href="#owlready" title="Permanent link">&para;</a></h6>
+<p>Owlready allows “ontology-oriented programming”, that is, object-oriented programming in which objects and classes are the entities of an ontology.</p>
+<h6 id="protege">Protege<a class="headerlink" href="#protege" title="Permanent link">&para;</a></h6>
+<ul>
+<li><strong>class:</strong> In an ontology, an individual can belong to several classes.<ul>
+<li>disjoint: Two disjoint classes cannot have individuals in common.</li>
+<li>pairwise disjoint: any pair made up of two classes from this list are disjoint</li>
+<li>partitoins: to declare "either or" of a class</li>
+</ul>
+</li>
+<li><strong>data properties:</strong> whose values are data (numbers, texts, dates, Booleans, etc.)<ul>
+<li>domain: This is the class for which the property is defined.</li>
+<li>range: This is the associated datatype. It can be an integer or a real number, Boolean, character string, date, and so on.</li>
+<li>functional status: When a property is functional, a given individual can have (at most) only one value for this property.</li>
+</ul>
+</li>
+<li><strong>object properties:</strong> whose values are entities (i.e., ontology individuals)<ul>
+<li>domain: This is the class for which the property is defined.</li>
+<li>range: This is the class of associated objects</li>
+<li>inverse property: The inverse property corresponds to existing relationships when the property is read backward.</li>
+<li>functional status: When a property is functional, a given individual can have (at most) only one value for this property.</li>
+<li>transitive status: A property is transitive if it is possible to “chain” this property on several objects</li>
+<li>symmetric status: A property is symmetrical if it can be read indifferently in both directions (it is thus its own inverse).</li>
+</ul>
+</li>
+<li>annotation properties: which do not intervene in semantics or reasoning and can therefore mix data and entities without restriction.</li>
+</ul>
 </section>
 
 <section id="mkdocs-terminal-after-content">
@@ -1057,6 +1148,13 @@
             
             <p class="text-center text-muted">&copy; 2022-2023 by <a href='https://chuxiaoyu.github.io/' target='_blank'> Xiaoyu Chu </a></p>
              Site built with <a href="http://www.mkdocs.org">MkDocs</a> and <a href="https://github.com/ntno/mkdocs-terminal">Terminal for MkDocs</a>.
+        </div>
+        <div id="terminal-mkdocs-footer-prev-next">
+            <nav class="btn-group">
+                <a href="../../time-series/03-mlp-time-series-forecasting/" title="3.MLP for Time Series Forecasting">Previous</a>
+                |
+                <a href="../../ml/Lecture07/" title="Lecture07 机器翻译、seq2seq模型、注意力机制">Next</a>
+            </nav>
         </div>
     </div>
 </footer>
