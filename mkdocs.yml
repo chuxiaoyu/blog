@@ -1,24 +1,11 @@
-site_name: 起 身 獨 立 向 荒 原 。
+site_name: Blog
 # repo_url: https://github.com/chuxiaoyu/blog
-copyright: "&copy; 2022-2023 by <a href='https://chuxiaoyu.github.io/' target='_blank'> Xiaoyu Chu </a>"
+copyright: "&copy; 2024 by <a href='https://chuxiaoyu.github.io/' target='_blank'> Xiaoyu Chu </a>"
 
 theme:
   name: terminal
   favicon: image/logo.png
   logo: image/avatar.jpg
-  #font:
-    #text: Crimson Pro
-  # palette: 
-  #   # Palette toggle for light mode
-  #   - scheme: default
-  #     toggle:
-  #       icon: material/brightness-7 
-  #       name: Switch to dark mode
-  #   # Palette toggle for dark mode
-  #   - scheme: dark
-  #     toggle:
-  #       icon: material/brightness-4
-  #       name: Switch to light mode
   feature:
     tabs: true
   features:
@@ -38,46 +25,8 @@ repo_name:
 
 
 nav:
-# - About: https://chuxiaoyu.cn/
-- Home: index.md
-# - Philosophy:
-  # - A Quick Introduction to 40+ Philosophers: philosophy/40-philosophers.md
-- Deep Learning for Time Series Forecasting:
-  - Taxonomy of Time Series Forecasting: time-series/01-time-series-types.md
-# - Python:
-#   - Fluent Python: python/fluent-python.md
-#   - Ontology with Python: python/ontology-with-python.md
-- CS224n自然语言处理:
-  - Lecture07 机器翻译、seq2seq模型、注意力机制: ml/Lecture07.md
-  - Lecture09 自注意力模型、Transformers: ml/Lecture09.md
-  - Lecture10 预训练: ml/Lecture10.md
-  - Lecture11 问答系统: ml/Lecture11.md
-- 基于transformers的NLP:
-  - Task01 NLP学习概览: ml/nlp-transformer-task01.md
-  - Task02 学习Attentioin和Transformer: ml/nlp-transformer-task02.md
-  - Task03 学习BERT: ml/nlp-transformer-task03.md
-  - Task04 学习GPT: ml/nlp-transformer-task04.md
-  - Task05 编写BERT模型: ml/nlp-transformer-task05.md
-  - Task06 BERT应用、训练和优化: ml/nlp-transformer-task06.md
-  - Task07 使用Transformers解决文本分类任务: ml/nlp-transformer-task07.md
-- 深入浅出PyTorch:
-  - Chapter01-02 PyTorch的简介和安装、PyTorch基础知识: ml/pytorch-chap01-02.md
-  - Chapter03 PyTorch的主要组成模块: ml/pytorch-chap03.md
-  - Chapter04 PyTorch基础实战——FashionMNIST图像分类: ml/pytorch-chap04.md
-- Nand2Tetris 计算机系统要素:
-  - Nand2Tetris Part1 (Hardware): system/nand2tetris_part_1.md
-  - Nand2Tetris Part2 (Software): system/nand2tetris_part_2.md
-- ML Compilation 机器学习编译:
-  - 01 机器学习编译概述: system/ml-compilation-01.md
-  - 02 张量程序抽象: system/ml-compilation-02.md
-  - 03 张量程序抽象案例研究：TensorIR: system/ml-compilation-03.md
-  - 04 端到端模型整合: system/ml-compilation-04.md
-  - 05 自动程序优化: system/ml-compilation-05.md
-- Resources:
-  - ML System Learning List: resource/ml-system-learning-list.md
-  - Open Source Projects: resource/open-source-projects.md
-  - Types of CS Paper: resource/post-types-of-paper.md
 # - About: https://chuxiaoyu.github.io/
+- Home: index.md
 
 
 markdown_extensions:
@@ -98,8 +47,6 @@ markdown_extensions:
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
-  - pymdownx.emoji:
-      emoji_generator: !!python/name:pymdownx.emoji.to_png
   - pymdownx.magiclink
   - pymdownx.mark
   - pymdownx.smartsymbols
